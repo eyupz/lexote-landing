@@ -1,0 +1,23 @@
+# Lexote
+
+Lexote, Türkiye'deki avukatlar ve hukuk profesyonelleri için tasarlanmış mobil bir dava ve süre takip uygulamasıdır.
+
+## Özellikler
+- Dava notu oluşturma ve düzenleme
+- HMK, CMK, İİK ve TBK kapsamında otomatik hukuki süre hesaplama
+- Hafta sonu ve resmi tatil dışlama seçeneği
+- Sesli not desteği
+- Akıllı push bildirimleri
+- KVKK uyumlu güvenli veri depolama
+
+## Platformlar
+- iOS (App Store): https://apps.apple.com/app/id6779772543
+- Android (Google Play): Yakında
+
+## İletişim
+- E-posta: info@lexote.com.tr
+- Web: https://lexote.com.tr
+
+## Yasal
+- Gizlilik Politikası: https://lexote.com.tr/privacy.html
+- Kullanım Koşulları: https://lexote.com.tr/terms.html
