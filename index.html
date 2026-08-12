@@ -6,7 +6,7 @@
   <title>Lexote</title>
   <meta name="description" content="Lexote — Avukatlar için dava takibi, otomatik süre hesaplama ve akıllı hatırlatıcılar. Hukuki süreçlerinizi tek bir uygulamada kontrol altına alın." />
   <meta name="theme-color" content="#0a0a0a" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link id="favicon" rel="icon" type="image/svg+xml" href="favicon-active.svg" />
   <meta property="og:title" content="Lexote — Hukuk Takip Uygulaması" />
   <meta property="og:description" content="Dava takibi, süre hesaplama ve hatırlatıcılar — tek bir uygulamada." />
   <meta property="og:type" content="website" />
@@ -189,7 +189,6 @@
         <div class="footer-col">
           <h4>İletişim</h4>
           <a href="mailto:info@lexote.com.tr">info@lexote.com.tr</a>
-          <a href="https://lexote.com.tr">lexote.com.tr</a>
         </div>
       </div>
       <div class="footer-bottom">© 2026 Lexote. Tüm hakları saklıdır.</div>
@@ -262,6 +261,34 @@
       resize(); init(); draw();
       window.addEventListener('resize', () => { cancelAnimationFrame(raf); resize(); init(); draw(); });
     })();
+
+    // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
+    const messages = [
+      'Davalarınız bekliyor — Lexote',
+      'Notlarınız sizi bekliyor — Lexote',
+      'Süreniz dolmadan dönün — Lexote',
+      'Hukuki süreciniz devam ediyor — Lexote'
+    ];
+    let messageIndex = 0;
+    let messageInterval = null;
+    const favicon = document.getElementById('favicon');
+    const originalTitle = document.title;
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        favicon.href = 'favicon-inactive.svg';
+        document.title = messages[0];
+        messageIndex = 1;
+        messageInterval = setInterval(() => {
+          document.title = messages[messageIndex];
+          messageIndex = (messageIndex + 1) % messages.length;
+        }, 3000);
+      } else {
+        favicon.href = 'favicon-active.svg';
+        clearInterval(messageInterval);
+        messageIndex = 0;
+        document.title = originalTitle;
+      }
+    });
   </script>
 </body>
 </html>

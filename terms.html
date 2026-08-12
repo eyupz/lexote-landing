@@ -6,7 +6,7 @@
   <title>Kullanım Koşulları — Lexote</title>
   <meta name="description" content="Lexote kullanım koşulları." />
   <meta name="theme-color" content="#0a0a0a" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link id="favicon" rel="icon" type="image/svg+xml" href="favicon-active.svg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -103,7 +103,6 @@
         <div class="footer-col">
           <h4>İletişim</h4>
           <a href="mailto:info@lexote.com.tr">info@lexote.com.tr</a>
-          <a href="https://lexote.com.tr">lexote.com.tr</a>
         </div>
       </div>
       <div class="footer-bottom">© 2026 Lexote. Tüm hakları saklıdır.</div>
@@ -121,6 +120,34 @@
       const open = navLinks.classList.toggle('open');
       navToggle.classList.toggle('open', open);
       navToggle.setAttribute('aria-expanded', String(open));
+    });
+
+    // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
+    const messages = [
+      'Davalarınız bekliyor — Lexote',
+      'Notlarınız sizi bekliyor — Lexote',
+      'Süreniz dolmadan dönün — Lexote',
+      'Hukuki süreciniz devam ediyor — Lexote'
+    ];
+    let messageIndex = 0;
+    let messageInterval = null;
+    const favicon = document.getElementById('favicon');
+    const originalTitle = document.title;
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        favicon.href = 'favicon-inactive.svg';
+        document.title = messages[0];
+        messageIndex = 1;
+        messageInterval = setInterval(() => {
+          document.title = messages[messageIndex];
+          messageIndex = (messageIndex + 1) % messages.length;
+        }, 3000);
+      } else {
+        favicon.href = 'favicon-active.svg';
+        clearInterval(messageInterval);
+        messageIndex = 0;
+        document.title = originalTitle;
+      }
     });
   </script>
 </body>
