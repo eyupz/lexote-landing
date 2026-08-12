@@ -3,190 +3,265 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lexote — Avukatlar için akıllı dava ve süre takip uygulaması</title>
-  <meta name="description" content="Lexote, avukatlar için dava notu, otomatik süre hesaplama (HMK, CMK, İİK, TBK) ve akıllı bildirimler sunan hukuk takip uygulaması." />
-  <meta name="theme-color" content="#111111" />
-  <!-- Open Graph -->
+  <title>Lexote</title>
+  <meta name="description" content="Lexote — Avukatlar için dava takibi, otomatik süre hesaplama ve akıllı hatırlatıcılar. Hukuki süreçlerinizi tek bir uygulamada kontrol altına alın." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta property="og:title" content="Lexote — Hukuk Takip Uygulaması" />
-  <meta property="og:description" content="Avukatlar için akıllı dava ve süre takip uygulaması." />
+  <meta property="og:description" content="Dava takibi, süre hesaplama ve hatırlatıcılar — tek bir uygulamada." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lexote.com.tr" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ── Header ── -->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="/">
-        <!-- Logo: siyah daire + altın L (görünürlük için altın halka) -->
-        <svg width="34" height="34" viewBox="0 0 72 72" aria-hidden="true">
-          <circle cx="36" cy="36" r="34" fill="#111111" stroke="#c9a84c" stroke-width="3" />
-          <text x="36" y="52" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#c9a84c">L</text>
+  <!-- ═══ Navbar ═══ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="16" fill="#0a0a0a"/>
+          <circle cx="16" cy="16" r="15" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+          <text x="16" y="23" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#c9a84c">L</text>
         </svg>
         <span class="brand-name">Lexote</span>
       </a>
-      <nav class="nav-links">
-        <a href="#features">Özellikler</a>
-        <a href="privacy.html">Gizlilik</a>
-        <a href="https://apps.apple.com/app/id6779772543">İndir</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="privacy.html">Gizlilik Politikası</a>
+        <a href="terms.html">Kullanım Koşulları</a>
       </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- ── Hero ── -->
+  <!-- ═══ Hero ═══ -->
   <section class="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
     <div class="container">
-      <svg class="emblem" width="96" height="96" viewBox="0 0 72 72" aria-hidden="true">
-        <circle cx="36" cy="36" r="34" fill="#111111" stroke="#c9a84c" stroke-width="3" />
-        <text x="36" y="52" text-anchor="middle" font-family="Georgia, serif" font-size="42" font-weight="700" fill="#c9a84c">L</text>
-      </svg>
-      <h1>Lexote</h1>
-      <p class="subtitle">Avukatlar için akıllı dava ve süre takip uygulaması</p>
-
+      <span class="badge">Avukatlar için tasarlandı</span>
+      <h1>Hukuki süreçlerinizi<br>kontrol altına alın</h1>
+      <p class="subtitle">Dava takibi, süre hesaplama ve hatırlatıcılar — tek bir uygulamada.</p>
       <div class="cta-row">
-        <!-- App Store -->
         <a class="btn btn-primary" href="https://apps.apple.com/app/id6779772543" aria-label="App Store'dan İndir">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="#111111" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#0a0a0a" aria-hidden="true">
             <path d="M16.365 1.43c0 1.14-.417 2.2-1.11 2.99-.79.9-2.09 1.6-3.2 1.51-.14-1.1.42-2.26 1.09-3 .77-.85 2.1-1.5 3.22-1.5zM20.5 17.02c-.55 1.27-.82 1.84-1.53 2.96-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.94-1-4.03-.99-2.09.01-2.53 1.01-4.07.99-1.73-.02-3.05-1.78-4.04-3.34C-.04 15.9-.3 10.66 1.4 8.03c1.09-1.69 2.81-2.68 4.43-2.68 1.65 0 2.69 1.02 4.06 1.02 1.33 0 2.14-1.02 4.05-1.02 1.44 0 2.97.79 4.06 2.15-3.57 1.96-2.99 7.06 0 9.52z"/>
           </svg>
-          <span>
-            <span class="store-sub">App Store'dan</span>
-            <span class="store-main">İndir</span>
-          </span>
+          <span><span class="sub">App Store'dan</span><span class="main">İndir</span></span>
         </a>
-
-        <!-- Google Play (henüz yayında değil) -->
         <a class="btn btn-outline" href="#" aria-label="Google Play'den İndir (yakında)">
           <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M3.6 2.3c-.3.2-.4.5-.4.9v17.6c0 .4.1.7.4.9l.1.1L13.5 12v-.1L3.7 2.2l-.1.1z" fill="#c9a84c"/>
-            <path d="M17 15.3 13.5 12v-.1L17 8.7l.1.1 4.1 2.3c1.2.7 1.2 1.8 0 2.5L17.1 15.9l-.1-.6z" fill="#d8bd6e"/>
+            <path d="M17 15.3 13.5 12v-.1L17 8.7l4.2 2.4c1.2.7 1.2 1.8 0 2.5L17 15.3z" fill="#dcc27a"/>
             <path d="M17.1 15.4 13.5 12 3.6 21.8c.4.4 1 .5 1.7.1l11.8-6.5" fill="#b8963c"/>
             <path d="M17.1 8.6 5.3 2.1c-.7-.4-1.3-.3-1.7.1L13.5 12l3.6-3.4z" fill="#e0c983"/>
           </svg>
-          <span>
-            <span class="store-sub">Yakında</span>
-            <span class="store-main">Google Play</span>
-          </span>
+          <span><span class="sub">Yakında</span><span class="main">Google Play</span></span>
         </a>
       </div>
-
-      <!-- Telefon mockup (CSS) — placeholder uygulama önizlemesi -->
-      <div class="phone-wrap">
-        <div class="phone">
-          <div class="phone-screen">
-            <div class="pscreen-header">
-              <span class="pscreen-title">Lexote</span>
-            </div>
-            <div class="pscreen-tabs">
-              <span class="pscreen-tab active">Aktif<span class="pscreen-badge">3</span></span>
-              <span class="pscreen-tab">Tamamlananlar</span>
-            </div>
-            <div class="pcards">
-              <div class="pcard">
-                <div class="pcard-bar bar-red"></div>
-                <div class="pcard-body">
-                  <div class="pcard-title">İstinaf Süresi <span class="pcard-time t-red">18s 42d</span></div>
-                  <div class="pcard-sub">2024/1234 · İstanbul BAM</div>
-                </div>
-              </div>
-              <div class="pcard">
-                <div class="pcard-bar bar-amber"></div>
-                <div class="pcard-body">
-                  <div class="pcard-title">Cevap Dilekçesi <span class="pcard-time t-amber">4 gün</span></div>
-                  <div class="pcard-sub">2024/0987 · Asliye Hukuk</div>
-                </div>
-              </div>
-              <div class="pcard">
-                <div class="pcard-bar bar-green"></div>
-                <div class="pcard-body">
-                  <div class="pcard-title">Bilirkişi İtirazı <span class="pcard-time t-green">12 gün</span></div>
-                  <div class="pcard-sub">2024/0456 · İş Mahkemesi</div>
-                </div>
-              </div>
-            </div>
-            <div class="pfab">＋</div>
-          </div>
-        </div>
-      </div>
     </div>
+    <a class="scroll-down" href="#features" aria-label="Aşağı kaydır">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
   </section>
 
-  <!-- ── Özellikler ── -->
-  <section class="features" id="features">
+  <!-- ═══ Özellikler ═══ -->
+  <section class="section section-alt" id="features">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <h2>Neden Lexote?</h2>
         <p>Dava sürelerini yönetmenin en akıllı yolu</p>
       </div>
       <div class="feature-grid">
-
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-              <path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z" />
-              <line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="13" y2="17" />
+              <rect x="8" y="3" width="8" height="4" rx="1"/><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/>
             </svg>
           </div>
           <h3>Not ve Süre Takibi</h3>
-          <p>Dava notlarınızı oluşturun, süreleri otomatik hesaplayın.</p>
+          <p>Dava notlarınızı oluşturun, düzenleyin ve süreleri otomatik hesaplayın.</p>
         </div>
-
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="13" r="8" /><path d="M12 9v4l2.5 2.5" />
-              <path d="M9 2h6" /><path d="M18.5 5.5 20 4" />
+              <path d="M12 3v18"/><path d="M7 7h10"/><path d="M5 7l-2.5 6a3 3 0 0 0 5 0L5 7z"/><path d="M19 7l-2.5 6a3 3 0 0 0 5 0L19 7z"/><path d="M8 21h8"/>
             </svg>
           </div>
-          <h3>Otomatik Hesaplama</h3>
-          <p>HMK, CMK, İİK ve TBK kapsamında otomatik süre hesaplama.</p>
+          <h3>Otomatik Süre Hesaplama</h3>
+          <p>HMK, CMK, İİK ve TBK kapsamında hukuki süreleri otomatik hesaplayın. Hafta sonu ve resmi tatiller dahil.</p>
         </div>
-
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
-              <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+              <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>
             </svg>
           </div>
           <h3>Akıllı Bildirimler</h3>
-          <p>Kritik tarihleri asla kaçırmayın, zamanında uyarı alın.</p>
+          <p>Kritik tarihleri asla kaçırmayın. Süre dolmadan önce zamanında uyarı alın.</p>
         </div>
-
-        <div class="feature-card">
+        <div class="feature-card reveal">
           <div class="feature-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" />
-              <path d="M9 12l2 2 4-4" />
+              <path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/>
             </svg>
           </div>
-          <h3>Güvenli ve KVKK Uyumlu</h3>
-          <p>Verileriniz şifreli ve güvende, KVKK standartlarında.</p>
+          <h3>Güvenli &amp; KVKK Uyumlu</h3>
+          <p>Verileriniz şifreli ve güvende. Türkiye KVKK standartlarına tam uyumlu altyapı.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ── Footer ── -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <svg width="28" height="28" viewBox="0 0 72 72" aria-hidden="true">
-          <circle cx="36" cy="36" r="34" fill="#111111" stroke="#c9a84c" stroke-width="3" />
-          <text x="36" y="52" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="700" fill="#c9a84c">L</text>
-        </svg>
-        <span class="brand-name">Lexote</span>
+  <!-- ═══ Nasıl Çalışır ═══ -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>3 Adımda Başlayın</h2>
+        <p>Dakikalar içinde kullanmaya başlayın</p>
       </div>
-      <div class="footer-links">
-        <a href="mailto:info@lexote.com.tr">info@lexote.com.tr</a>
-        <a href="privacy.html">Gizlilik Politikası</a>
+      <div class="steps" id="steps">
+        <div class="step reveal">
+          <div class="step-num">1</div>
+          <h3>Kayıt Ol</h3>
+          <p>Ücretsiz hesap oluşturun, hemen kullanmaya başlayın.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">2</div>
+          <h3>Dava Ekle</h3>
+          <p>Davalarınızı, dosya numaralarını ve süreleri girin.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">3</div>
+          <h3>Takip Et</h3>
+          <p>Otomatik hatırlatıcılar ile hiçbir tarihi kaçırmayın.</p>
+        </div>
       </div>
-      <div class="footer-copy">© 2026 Lexote</div>
+    </div>
+  </section>
+
+  <!-- ═══ İndirme CTA ═══ -->
+  <section class="section">
+    <div class="cta reveal">
+      <h2>Hemen İndirin</h2>
+      <p>Ücretsiz başlayın, istediğiniz zaman yükseltin.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/id6779772543" aria-label="App Store'dan İndir">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#0a0a0a" aria-hidden="true">
+            <path d="M16.365 1.43c0 1.14-.417 2.2-1.11 2.99-.79.9-2.09 1.6-3.2 1.51-.14-1.1.42-2.26 1.09-3 .77-.85 2.1-1.5 3.22-1.5zM20.5 17.02c-.55 1.27-.82 1.84-1.53 2.96-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.94-1-4.03-.99-2.09.01-2.53 1.01-4.07.99-1.73-.02-3.05-1.78-4.04-3.34C-.04 15.9-.3 10.66 1.4 8.03c1.09-1.69 2.81-2.68 4.43-2.68 1.65 0 2.69 1.02 4.06 1.02 1.33 0 2.14-1.02 4.05-1.02 1.44 0 2.97.79 4.06 2.15-3.57 1.96-2.99 7.06 0 9.52z"/>
+          </svg>
+          <span><span class="sub">App Store'dan</span><span class="main">İndir</span></span>
+        </a>
+        <a class="btn btn-outline btn-lg" href="#" aria-label="Google Play'den İndir (yakında)">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3.6 2.3c-.3.2-.4.5-.4.9v17.6c0 .4.1.7.4.9l.1.1L13.5 12v-.1L3.7 2.2l-.1.1z" fill="#c9a84c"/>
+            <path d="M17 15.3 13.5 12v-.1L17 8.7l4.2 2.4c1.2.7 1.2 1.8 0 2.5L17 15.3z" fill="#dcc27a"/>
+            <path d="M17.1 15.4 13.5 12 3.6 21.8c.4.4 1 .5 1.7.1l11.8-6.5" fill="#b8963c"/>
+            <path d="M17.1 8.6 5.3 2.1c-.7-.4-1.3-.3-1.7.1L13.5 12l3.6-3.4z" fill="#e0c983"/>
+          </svg>
+          <span><span class="sub">Yakında</span><span class="main">Google Play</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="16" fill="#0a0a0a"/>
+              <circle cx="16" cy="16" r="15" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+              <text x="16" y="23" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#c9a84c">L</text>
+            </svg>
+            <span class="brand-name">Lexote</span>
+          </a>
+          <p>Avukatlar için akıllı dava ve süre takip uygulaması.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Yasal</h4>
+          <a href="privacy.html">Gizlilik Politikası</a>
+          <a href="terms.html">Kullanım Koşulları</a>
+        </div>
+        <div class="footer-col">
+          <h4>İletişim</h4>
+          <a href="mailto:info@lexote.com.tr">info@lexote.com.tr</a>
+          <a href="https://lexote.com.tr">lexote.com.tr</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Lexote. Tüm hakları saklıdır.</div>
     </div>
   </footer>
 
+  <script>
+    // ── Navbar scroll + hamburger ──
+    const navbar = document.getElementById('navbar');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open'); navToggle.classList.remove('open');
+    }));
+
+    // ── Scroll reveal (Intersection Observer) ──
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          if (e.target.id === 'steps') e.target.classList.add('animate');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    const steps = document.getElementById('steps');
+    if (steps) io.observe(steps);
+
+    // ── Hero particle effect (subtle altın noktalar) ──
+    (function () {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const ctx = canvas.getContext('2d');
+      let w, h, particles, raf;
+      const COUNT = 46;
+      function resize() {
+        w = canvas.width = canvas.offsetWidth;
+        h = canvas.height = canvas.offsetHeight;
+      }
+      function init() {
+        particles = Array.from({ length: COUNT }, () => ({
+          x: Math.random() * w, y: Math.random() * h,
+          r: Math.random() * 1.6 + 0.4,
+          vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
+          a: Math.random() * 0.5 + 0.2,
+        }));
+      }
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+        for (const p of particles) {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(201, 168, 76, ' + p.a + ')';
+          ctx.fill();
+        }
+        raf = requestAnimationFrame(draw);
+      }
+      resize(); init(); draw();
+      window.addEventListener('resize', () => { cancelAnimationFrame(raf); resize(); init(); draw(); });
+    })();
+  </script>
 </body>
 </html>
