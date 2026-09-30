@@ -65,7 +65,8 @@
         <p><strong>Uygulama içeriğiniz:</strong> oluşturduğunuz notlar, açıklamalar, mahkeme/kurum bilgisi, dosya numarası, süre ve tarih bilgileri, sesli notlar (ses kayıtları) ve bunların oluşturma/güncelleme zamanları.</p>
         <p><strong>Destek yazışmaları:</strong> uygulama içinden destek e-postası gönderdiğinizde e-posta adresiniz, mesajınız ve mesaja otomatik eklenen uygulama sürümü ile cihaz modeli/işletim sistemi bilgisi.</p>
         <p><strong>Teknik veriler:</strong> hizmetin sunulması ve güvenliği için altyapı sağlayıcılarımızda oluşan bağlantı kayıtları (IP adresi dahil sunucu günlükleri) ve hata kayıtları.</p>
-        <p>Uygulama reklam kimliği kullanmaz, konum verisi toplamaz, rehber/fotoğraf erişimi istemez ve kullanıcıları izlemek amacıyla üçüncü taraf analiz araçları çalıştırmaz.</p>
+        <p><strong>Çökme ve tanılama verileri:</strong> uygulama beklenmedik şekilde kapanırsa, hatanın giderilebilmesi için otomatik bir çökme raporu oluşturulur. Bu rapor hatanın teknik dökümünü, uygulama sürümünü, cihaz modelini ve işletim sistemi sürümünü içerir. <strong>Rapora not içerikleriniz, müvekkil bilgileriniz, ses kayıtlarınız veya hesap kimliğiniz dahil edilmez</strong> — çökme kayıtları kullanıcı hesabınızla ilişkilendirilmez.</p>
+        <p>Uygulama reklam kimliği kullanmaz, konum verisi toplamaz, rehber/fotoğraf erişimi istemez ve kullanıcıları izlemek ya da profillemek amacıyla analiz aracı çalıştırmaz. Toplanan tek ölçüm verisi, yukarıda açıklanan çökme raporlarıdır.</p>
 
         <h2>3. İşleme Amaçları ve Hukuki Sebepler</h2>
         <ul>
@@ -98,7 +99,7 @@
         <h2>6. Aktarım ve Yurt Dışına Aktarım</h2>
         <p>Hizmetin sunulabilmesi için aşağıdaki hizmet sağlayıcılar kullanılmaktadır:</p>
         <ul>
-          <li><strong>Google (Firebase / Google Cloud):</strong> kimlik doğrulama, veritabanı (Cloud Firestore — Frankfurt, Almanya), sunucu fonksiyonları (Belçika) ve dosya depolama (ses kayıtları). Google, verileri kendi altyapısında işler.</li>
+          <li><strong>Google (Firebase / Google Cloud):</strong> kimlik doğrulama, veritabanı (Cloud Firestore — Frankfurt, Almanya), sunucu fonksiyonları (Belçika), dosya depolama (ses kayıtları), uygulama bütünlüğü doğrulaması (App Check) ve çökme raporlaması (Crashlytics). Google, verileri kendi altyapısında işler.</li>
           <li><strong>Resend:</strong> yalnızca şifre sıfırlama kodlarının e-posta ile iletilmesi.</li>
           <li><strong>Apple ve Google (uygulama mağazaları):</strong> uygulamanın dağıtımı, bildirim altyapısı ve mağaza içi puanlama.</li>
         </ul>
