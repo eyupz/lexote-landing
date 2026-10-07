@@ -2,238 +2,400 @@
 <html lang="tr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lexote</title>
-  <meta name="description" content="Lexote, avukatlar için tasarlanmış akıllı dava ve süre takip uygulaması. HMK, CMK, İİK ve TBK kapsamında otomatik süre hesaplama, hatırlatıcılar ve dava notları." />
-  <meta name="keywords" content="avukat uygulaması, dava takip, süre hesaplama, hukuk yazılımı, HMK süre, CMK süre, İİK süre, avukat programı, lexote" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Lexote — Avukatlar için süre ve not takibi</title>
+  <meta name="description" content="Lexote, avukatlar için süre ve not takip uygulamasıdır. Tebliğ tarihinden son günü HMK m.92, m.93, m.104 ve Tebligat K. m.7/a kurallarına göre hesaplar; süre yaklaşırken hatırlatır." />
   <meta name="author" content="Lexote" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lexote.com.tr/" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#111715" />
   <link id="favicon" rel="icon" type="image/svg+xml" href="favicon-active.svg" />
+  <link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/newsreader-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
 
-  <!-- Open Graph (sosyal medya paylaşımı) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lexote.com.tr/" />
-  <meta property="og:title" content="Lexote — Avukatlar için Dava ve Süre Takip Uygulaması" />
-  <meta property="og:description" content="Dava takibi, otomatik süre hesaplama ve akıllı hatırlatıcılar. Avukatlar için tasarlandı." />
+  <meta property="og:title" content="Lexote — Avukatlar için süre ve not takibi" />
+  <meta property="og:description" content="Son gün kanuna göre hesaplanır, hatırlatmalar zamanında gelir. Mahkeme, dosya numarası ve sesli notlarınız tek yerde." />
   <meta property="og:image" content="https://lexote.com.tr/og-image.png" />
   <meta property="og:locale" content="tr_TR" />
   <meta property="og:site_name" content="Lexote" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Lexote — Avukatlar için Dava Takip Uygulaması" />
-  <meta name="twitter:description" content="Dava takibi, süre hesaplama ve akıllı hatırlatıcılar." />
+  <meta name="twitter:title" content="Lexote — Avukatlar için süre ve not takibi" />
+  <meta name="twitter:description" content="Son gün kanuna göre hesaplanır, hatırlatmalar zamanında gelir." />
   <meta name="twitter:image" content="https://lexote.com.tr/og-image.png" />
 
-  <!-- Structured Data (Schema.org) -->
+  <!-- Yapılandırılmış veri -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "Lexote",
-    "description": "Avukatlar için tasarlanmış akıllı dava ve süre takip uygulaması",
+    "description": "Avukatlar için süre ve not takip uygulaması. Tebliğ tarihinden son günü resmî tatil, adli tatil ve e-tebligat kurallarını dikkate alarak hesaplar; süre yaklaşırken hatırlatır.",
     "url": "https://lexote.com.tr",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "iOS, Android",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "TRY"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Lexote",
-      "email": "info@lexote.com.tr",
-      "url": "https://lexote.com.tr"
-    },
-    "inLanguage": "tr",
-    "availableOnDevice": "Mobile",
-    "downloadUrl": "https://apps.apple.com/app/id6779772543"
+    "inLanguage": ["tr", "en"],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
+    "author": { "@type": "Organization", "name": "Lexote", "email": "info@lexote.com.tr", "url": "https://lexote.com.tr" }
   }
   </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Lexote",
-    "url": "https://lexote.com.tr",
-    "email": "info@lexote.com.tr",
-    "description": "Avukatlar için dava ve süre takip uygulaması",
-    "sameAs": []
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Lexote son günü nasıl hesaplıyor?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tebliğ tarihini ve süreyi seçersiniz. Gün olarak belirlenen sürede tebliğ günü sayılmaz; hafta ve ay olarak belirlenen süre son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92). Aradaki tatiller süreye dahildir; son gün resmî tatile rastlarsa süre izleyen ilk iş günü biter (HMK m.93). Adli tatile tabi işlerde son gün 20 Temmuz–31 Ağustos arasına düşerse süre 7 Eylül'e uzar (HMK m.104). E-tebligatta tebliğ, ulaştığı günü izleyen beşinci günün sonunda yapılmış sayılır (Tebligat K. m.7/a)." } },
+      { "@type": "Question", "name": "Hesaplanan son güne güvenebilir miyim?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hesaplama bilgi amaçlıdır. Adli tatil ve özel düzenlemeler için mevzuatı teyit edin; nihai sorumluluk avukattadır." } },
+      { "@type": "Question", "name": "Hesap açmadan kullanabilir miyim?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Evet. Kayıt olmadan misafir olarak başlayabilirsiniz. Daha sonra hesap oluşturduğunuzda misafir olarak eklediğiniz notlar yeni hesabınıza aktarılır." } },
+      { "@type": "Question", "name": "Lexote ücretli mi?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hayır, Lexote şu an ücretsizdir." } },
+      { "@type": "Question", "name": "Verilerim nerede saklanıyor?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Notlarınız Google Cloud Firestore'da, Frankfurt (Almanya) veri merkezinde saklanır. Uygulama ile sunucu arasındaki iletişim TLS ile şifrelenir. Hesabınızı sildiğinizde notlarınız ve ses kayıtlarınız sunucudan otomatik olarak silinir." } },
+      { "@type": "Question", "name": "Lexote hangi cihazlarda çalışır?",
+        "acceptedAnswer": { "@type": "Answer", "text": "iPhone ve Android telefonlarda çalışır. Uygulama Türkçe ve İngilizce kullanılabilir; koyu ve açık tema seçeneği vardır." } }
+    ]
   }
   </script>
 
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ═══ Navbar ═══ -->
+  <!-- ═══ Üst çubuk ═══ -->
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a class="brand" href="index.html">
-        <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true">
-          <circle cx="16" cy="16" r="16" fill="#0a0a0a"/>
-          <circle cx="16" cy="16" r="15" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
-          <text x="16" y="23" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#c9a84c">L</text>
+      <a class="brand" href="./" aria-label="Lexote ana sayfa">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="15.3" fill="none" stroke="#C9A84C" stroke-width="1"/>
+          <text x="16" y="22.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="18.5" font-weight="400" fill="#C9A84C">L</text>
         </svg>
         <span class="brand-name">Lexote</span>
       </a>
-      <nav class="nav-links" id="navLinks">
-        <a href="privacy.html">Gizlilik Politikası</a>
-        <a href="terms.html">Kullanım Koşulları</a>
+      <nav class="nav-links" id="navLinks" aria-label="Sayfa içi">
+        <a href="#hesap">Süre hesabı</a>
+        <a href="#ozellikler">Özellikler</a>
+        <a href="#hatirlatma">Hatırlatmalar</a>
+        <a href="#sss">Sorular</a>
+        <a class="nav-cta" href="#indir">Uygulamayı edinin</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Menü" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <a class="btn btn-ghost btn-sm" href="#indir">Uygulamayı edinin</a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- ═══ Hero ═══ -->
-  <section class="hero">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
-    <div class="container">
-      <span class="badge">Avukatlar için tasarlandı</span>
-      <h1>Hukuki süreçlerinizi<br>kontrol altına alın</h1>
-      <p class="subtitle">Dava takibi, süre hesaplama ve hatırlatıcılar tek bir uygulamada.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://apps.apple.com/app/id6779772543" aria-label="App Store'dan İndir">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="#0a0a0a" aria-hidden="true">
-            <path d="M16.365 1.43c0 1.14-.417 2.2-1.11 2.99-.79.9-2.09 1.6-3.2 1.51-.14-1.1.42-2.26 1.09-3 .77-.85 2.1-1.5 3.22-1.5zM20.5 17.02c-.55 1.27-.82 1.84-1.53 2.96-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.94-1-4.03-.99-2.09.01-2.53 1.01-4.07.99-1.73-.02-3.05-1.78-4.04-3.34C-.04 15.9-.3 10.66 1.4 8.03c1.09-1.69 2.81-2.68 4.43-2.68 1.65 0 2.69 1.02 4.06 1.02 1.33 0 2.14-1.02 4.05-1.02 1.44 0 2.97.79 4.06 2.15-3.57 1.96-2.99 7.06 0 9.52z"/>
-          </svg>
-          <span><span class="sub">App Store'dan</span><span class="main">İndir</span></span>
-        </a>
-        <a class="btn btn-outline" href="#" aria-label="Google Play'den İndir (yakında)">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3.6 2.3c-.3.2-.4.5-.4.9v17.6c0 .4.1.7.4.9l.1.1L13.5 12v-.1L3.7 2.2l-.1.1z" fill="#c9a84c"/>
-            <path d="M17 15.3 13.5 12v-.1L17 8.7l4.2 2.4c1.2.7 1.2 1.8 0 2.5L17 15.3z" fill="#dcc27a"/>
-            <path d="M17.1 15.4 13.5 12 3.6 21.8c.4.4 1 .5 1.7.1l11.8-6.5" fill="#b8963c"/>
-            <path d="M17.1 8.6 5.3 2.1c-.7-.4-1.3-.3-1.7.1L13.5 12l3.6-3.4z" fill="#e0c983"/>
-          </svg>
-          <span><span class="sub">Yakında</span><span class="main">Google Play</span></span>
-        </a>
-      </div>
-    </div>
-    <a class="scroll-down" href="#features" aria-label="Aşağı kaydır">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-    </a>
-  </section>
-
-  <!-- ═══ Özellikler ═══ -->
-  <section class="section section-alt" id="features">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Neden Lexote?</h2>
-        <p>Dava sürelerini yönetmenin en akıllı yolu</p>
-      </div>
-      <div class="feature-grid">
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="8" y="3" width="8" height="4" rx="1"/><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/>
-            </svg>
+  <main>
+    <!-- ═══ Giriş ═══ -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Avukatlar için süre ve not takibi</p>
+          <h1>Son gün, <em>kanuna göre</em> hesaplanır.</h1>
+          <p class="lead">Tebliğ tarihini ve süreyi seçin; Lexote resmî tatilleri, adli tatili ve e-tebligatı dikkate alarak son günü hesaplar, süre yaklaşırken size hatırlatır.</p>
+          <div class="hero-actions">
+            <div class="stores" aria-label="Uygulama mağazaları">
+              <span class="store" aria-disabled="true">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 1.43c0 1.14-.42 2.2-1.11 2.99-.79.9-2.09 1.6-3.2 1.51-.14-1.1.42-2.26 1.09-3 .77-.85 2.1-1.5 3.22-1.5zM20.5 17.02c-.55 1.27-.82 1.84-1.53 2.96-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.94-1-4.03-.99-2.09.01-2.53 1.01-4.07.99-1.73-.02-3.05-1.78-4.04-3.34C-.04 15.9-.3 10.66 1.4 8.03c1.09-1.69 2.81-2.68 4.43-2.68 1.65 0 2.69 1.02 4.06 1.02 1.33 0 2.14-1.02 4.05-1.02 1.44 0 2.97.79 4.06 2.15-3.57 1.96-2.99 7.06 0 9.52z"/></svg>
+                <span><small>Yakında</small><strong>App Store</strong></span>
+              </span>
+              <span class="store" aria-disabled="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.2-.4.5-.4.9v17.6c0 .4.1.7.4.9l.1.1L13.5 12v-.1L3.7 2.2l-.1.1z" fill="#8CC7B5"/><path d="M17 15.3 13.5 12v-.1L17 8.7l4.2 2.4c1.2.7 1.2 1.8 0 2.5L17 15.3z" fill="#DCC27A"/><path d="M17.1 15.4 13.5 12 3.6 21.8c.4.4 1 .5 1.7.1l11.8-6.5" fill="#C9A84C"/><path d="M17.1 8.6 5.3 2.1c-.7-.4-1.3-.3-1.7.1L13.5 12l3.6-3.4z" fill="#4CAF7D"/></svg>
+                <span><small>Yakında</small><strong>Google Play</strong></span>
+              </span>
+            </div>
+            <a class="link-arrow" href="#hesap">Bir hesabı adım adım görün
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
           </div>
-          <h3>Not ve Süre Takibi</h3>
-          <p>Dava notlarınızı oluşturun, düzenleyin ve süreleri otomatik hesaplayın.</p>
+          <p class="hero-meta"><span>iPhone ve Android</span><span>Türkçe ve İngilizce</span><span>Hesap açmadan başlayın</span></p>
         </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3v18"/><path d="M7 7h10"/><path d="M5 7l-2.5 6a3 3 0 0 0 5 0L5 7z"/><path d="M19 7l-2.5 6a3 3 0 0 0 5 0L19 7z"/><path d="M8 21h8"/>
-            </svg>
-          </div>
-          <h3>Otomatik Süre Hesaplama</h3>
-          <p>Duruşma tarihleri, dilekçe süreleri ve itiraz sürelerini tek ekrandan yönetin. Renk kodlu uyarılar ve akıllı bildirimler ile kritik tarihleri her zaman önünüzde tutun.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>
-            </svg>
-          </div>
-          <h3>Akıllı Bildirimler</h3>
-          <p>Kritik tarihleri asla kaçırmayın. Süre dolmadan önce zamanında uyarı alın.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/>
-            </svg>
-          </div>
-          <h3>Güvenli &amp; KVKK Uyumlu</h3>
-          <p>Verileriniz şifreli ve güvende. Türkiye KVKK standartlarına tam uyumlu altyapı.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ═══ Nasıl Çalışır ═══ -->
-  <section class="section" id="how">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>3 Adımda Başlayın</h2>
-        <p>Dakikalar içinde kullanmaya başlayın</p>
-      </div>
-      <div class="steps" id="steps">
-        <div class="step reveal">
-          <div class="step-num">1</div>
-          <h3>Kayıt Ol</h3>
-          <p>Ücretsiz hesap oluşturun, hemen kullanmaya başlayın.</p>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">2</div>
-          <h3>Dava Ekle</h3>
-          <p>Davalarınızı, dosya numaralarını ve süreleri girin.</p>
-        </div>
-        <div class="step reveal">
-          <div class="step-num">3</div>
-          <h3>Takip Et</h3>
-          <p>Otomatik hatırlatıcılar ile hiçbir tarihi kaçırmayın.</p>
+        <!-- Sahne: Raylight videosu gelince .stage içine
+             <video class="stage-video" autoplay muted loop playsinline poster="..."> konacak -->
+        <div class="stage" aria-label="Lexote ana ekranı: aktif notlar, kalan süreye göre renklendirilmiş">
+          <div class="plinth" aria-hidden="true"></div>
+          <div class="phone">
+            <picture>
+              <source srcset="img/app-ana-ekran.webp" type="image/webp" />
+              <img src="img/app-ana-ekran.jpg" width="720" height="1564" alt="Lexote ana ekranı: Ödeme emrine itiraz notunda 1 gün 13 saat kaldı (turuncu), diğer notlarda 8 ila 28 gün kaldı (yeşil)." fetchpriority="high" />
+            </picture>
+          </div>
+          <div class="notif" aria-hidden="true">
+            <span class="app-icon">
+              <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="none" stroke="#C9A84C" stroke-width="1"/><text x="16" y="21.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="16" fill="#C9A84C">L</text></svg>
+            </span>
+            <span class="notif-top"><span>LEXOTE</span><span>şimdi</span></span>
+            <span class="notif-title">Yaklaşan süre</span>
+            <span class="notif-body">Yarın doluyor: Ödeme emrine itiraz</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ═══ İndirme CTA ═══ -->
-  <section class="section">
-    <div class="cta reveal">
-      <h2>Hemen İndirin</h2>
-      <p>Ücretsiz başlayın, istediğiniz zaman yükseltin.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/id6779772543" aria-label="App Store'dan İndir">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="#0a0a0a" aria-hidden="true">
-            <path d="M16.365 1.43c0 1.14-.417 2.2-1.11 2.99-.79.9-2.09 1.6-3.2 1.51-.14-1.1.42-2.26 1.09-3 .77-.85 2.1-1.5 3.22-1.5zM20.5 17.02c-.55 1.27-.82 1.84-1.53 2.96-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.94-1-4.03-.99-2.09.01-2.53 1.01-4.07.99-1.73-.02-3.05-1.78-4.04-3.34C-.04 15.9-.3 10.66 1.4 8.03c1.09-1.69 2.81-2.68 4.43-2.68 1.65 0 2.69 1.02 4.06 1.02 1.33 0 2.14-1.02 4.05-1.02 1.44 0 2.97.79 4.06 2.15-3.57 1.96-2.99 7.06 0 9.52z"/>
-          </svg>
-          <span><span class="sub">App Store'dan</span><span class="main">İndir</span></span>
-        </a>
-        <a class="btn btn-outline btn-lg" href="#" aria-label="Google Play'den İndir (yakında)">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3.6 2.3c-.3.2-.4.5-.4.9v17.6c0 .4.1.7.4.9l.1.1L13.5 12v-.1L3.7 2.2l-.1.1z" fill="#c9a84c"/>
-            <path d="M17 15.3 13.5 12v-.1L17 8.7l4.2 2.4c1.2.7 1.2 1.8 0 2.5L17 15.3z" fill="#dcc27a"/>
-            <path d="M17.1 15.4 13.5 12 3.6 21.8c.4.4 1 .5 1.7.1l11.8-6.5" fill="#b8963c"/>
-            <path d="M17.1 8.6 5.3 2.1c-.7-.4-1.3-.3-1.7.1L13.5 12l3.6-3.4z" fill="#e0c983"/>
-          </svg>
-          <span><span class="sub">Yakında</span><span class="main">Google Play</span></span>
-        </a>
+      <div class="laws">
+        <div class="container laws-grid">
+          <p class="laws-label">Hesabın dayandığı kurallar</p>
+          <div class="law"><span class="cite">HMK m.92</span><p>Tebliğ günü sayılmaz; hafta ve ay, karşılık gelen günde biter.</p></div>
+          <div class="law"><span class="cite">HMK m.93</span><p>Son gün tatile rastlarsa izleyen ilk iş günü.</p></div>
+          <div class="law"><span class="cite">HMK m.104</span><p>Adli tatile tabi işlerde süre 7 Eylül'e uzar.</p></div>
+          <div class="law"><span class="cite">Tebligat K. m.7/a</span><p>E-tebligat, ulaştığı günü izleyen 5. gün yapılmış sayılır.</p></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══ Footer ═══ -->
+    <!-- ═══ Süre hesabı ═══ -->
+    <section class="section" id="hesap">
+      <div class="container calc-grid">
+        <div class="calc-copy reveal">
+          <p class="eyebrow">Süre hesabı</p>
+          <h2>Tarihi değil, <em>gerekçesini</em> de görün.</h2>
+          <p class="lead">Lexote son günü gösterirken neden o gün olduğunu da yazar: tebliğin yapılmış sayıldığı gün, tatil nedeniyle kayma, adli tatil uzaması. Buradaki örnek, uygulamanın kendi hesap motoruyla hesaplandı.</p>
+          <ul class="options">
+            <li><strong>E-tebligat ile geldi</strong><span class="cite">Tebligat K. m.7/a</span><p>Ulaştığı günü izleyen 5. gün tebliğ edilmiş sayılır; süre o günden başlar.</p></li>
+            <li><strong>Adli tatile tabi</strong><span class="cite">HMK m.104</span><p>Son gün 20 Temmuz–31 Ağustos arasına düşerse süre 7 Eylül'e uzar.</p></li>
+            <li><strong>İş günü olarak say</strong><p>Yalnızca kanunda iş günüyle belirlenen süreler için. Genel kuralda tatiller süreye dahildir.</p></li>
+            <li><strong>Hazır süreler ya da takvim</strong><p>1 hafta, 2 hafta, 10 gün, 15 gün, 30 gün, 1 ay, 60 gün; dilerseniz son günü doğrudan takvimden seçin.</p></li>
+          </ul>
+        </div>
+
+        <div class="ledger reveal" id="ledger">
+          <div class="ledger-head"><span><b>Örnek:</b> istinaf süresi</span><span>İstanbul 14. Asliye Ticaret Mahkemesi</span></div>
+          <ol>
+            <li class="step">
+              <div class="step-date">10 Ekim 2026<span>Cumartesi</span></div>
+              <div class="step-body"><p>Gerekçeli karar elektronik tebligat adresine ulaştı.</p></div>
+            </li>
+            <li class="step">
+              <div class="step-date">15 Ekim 2026<span>Perşembe</span></div>
+              <div class="step-body"><p>Tebliğ yapılmış sayılır: ulaştığı günü izleyen beşinci gün.</p><div class="cites"><span class="cite">Tebligat K. m.7/a</span></div></div>
+            </li>
+            <li class="step">
+              <div class="step-date">+ 2 hafta<span>İstinaf süresi</span></div>
+              <div class="step-body"><p>Hafta olarak belirlenen süre, son haftada başladığı güne karşılık gelen günde biter.</p><div class="cites"><span class="cite">HMK m.345</span><span class="cite">HMK m.92/2</span></div></div>
+            </li>
+            <li class="step step-holiday">
+              <div class="step-date"><s>29 Ekim 2026</s><span>Perşembe · Cumhuriyet Bayramı</span></div>
+              <div class="step-body"><p>Son gün resmî tatile rastlıyor. Aradaki tatiller süreye dahildir; yalnızca son gün ileri kayar.</p><div class="cites"><span class="cite">HMK m.93</span></div></div>
+            </li>
+          </ol>
+          <div class="result">
+            <p class="result-label">Son gün</p>
+            <p class="result-date">30 Ekim 2026, Cuma</p>
+            <p>Son gün tatile rastladığı için izleyen ilk iş gününe uzatıldı.</p>
+          </div>
+          <p class="disclaimer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5v.01"/></svg>
+            Bilgi amaçlı hesaplamadır; adli tatil ve özel düzenlemeler için mevzuatı teyit edin.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Aciliyet ═══ -->
+    <section class="section" id="ozellikler">
+      <div class="container urgency-grid">
+        <div class="reveal">
+          <p class="eyebrow">Ana ekran</p>
+          <h2>Hangi dosya acil, <em>renginden</em> belli.</h2>
+          <p class="lead mt">Her not, son güne kalan süreye göre renk alır ve kalan süre saatine kadar gösterilir. Süre filtresiyle yalnızca bir rengi görebilirsiniz.</p>
+          <ul class="legend" id="legend" aria-label="Süre filtresi">
+            <li><button type="button" data-filter="red" aria-pressed="false"><span class="dot dot-red"></span><strong>24 saatten az</strong><small>Kırmızı</small></button></li>
+            <li><button type="button" data-filter="amber" aria-pressed="false"><span class="dot dot-amber"></span><strong>1–7 gün</strong><small>Turuncu</small></button></li>
+            <li><button type="button" data-filter="green" aria-pressed="false"><span class="dot dot-green"></span><strong>7 günden fazla</strong><small>Yeşil</small></button></li>
+          </ul>
+          <p class="legend-note">Denemek için bir renge dokunun.</p>
+        </div>
+
+        <div class="app-panel reveal" aria-label="Örnek not listesi">
+          <div class="app-tabs" aria-hidden="true"><span>Aktif <i id="activeCount">4</i></span><span>Tamamlananlar</span></div>
+          <div class="note-card red" data-color="red">
+            <div class="note-row"><span class="note-title">Ödeme emrine itiraz</span><span class="note-left">5s 52d</span></div>
+            <div class="note-no">2025/11482 Esas</div>
+            <div class="note-court">Ankara 7. İcra Dairesi</div>
+          </div>
+          <div class="note-card amber" data-color="amber">
+            <div class="note-row"><span class="note-title">Hakem heyeti kararına itiraz</span><span class="note-left">4 gün 19 saat</span></div>
+            <div class="note-no">2025/1207 E.</div>
+            <div class="note-court">İzmir 3. Tüketici Mahkemesi</div>
+          </div>
+          <div class="note-card green" data-color="green">
+            <div class="note-row"><span class="note-title">İstinaf başvurusu</span><span class="note-left">12 gün 19 saat</span></div>
+            <div class="note-no">2025/2210 E.</div>
+            <div class="note-court">İstanbul BAM 12. Hukuk Dairesi</div>
+          </div>
+          <div class="note-card green" data-color="green">
+            <div class="note-row"><span class="note-title">Vergi ziyaı cezasına karşı dava açma</span><span class="note-left">28 gün 19 saat</span></div>
+            <div class="note-no">2025/884 E.</div>
+            <div class="note-court">Ankara 2. Vergi Mahkemesi</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container features-wrap">
+        <div class="features">
+          <div class="feature reveal"><span class="num">i.</span><h3>Dosya notu</h3><p>Mahkeme veya kurum, dosya numarası ve açıklama tek notta. Mahkeme ve dosya numarası isteğe bağlıdır.</p></div>
+          <div class="feature reveal"><span class="num">ii.</span><h3>Sesli not</h3><p>Duruşma çıkışında yazmaya vakit yoksa kaydedin. Bir nota birden fazla ses kaydı ekleyebilirsiniz.</p></div>
+          <div class="feature reveal"><span class="num">iii.</span><h3>Arama</h3><p>Açıklama, dosya numarası, mahkeme ya da not içeriğinden arayın.</p></div>
+          <div class="feature reveal"><span class="num">iv.</span><h3>Tamamlananlar</h3><p>İşi biten notu kaydırarak tamamlayın; aktif liste yalnızca bekleyen işleri gösterir. Tamamlanan not 72 saat sonra çöp kutusuna geçer.</p></div>
+          <div class="feature reveal"><span class="num">v.</span><h3>Çöp kutusu</h3><p>Silinen not 30 gün çöp kutusunda bekler; bu süre içinde geri alabilirsiniz.</p></div>
+          <div class="feature reveal"><span class="num">vi.</span><h3>Hesap açmadan başlayın</h3><p>Misafir olarak hemen kullanın. Sonra hesap oluşturduğunuzda notlarınız yeni hesabınıza aktarılır ve tüm cihazlarınızdan erişirsiniz.</p></div>
+        </div>
+        <p class="features-foot">Koyu ve açık tema · Türkçe ve İngilizce</p>
+      </div>
+    </section>
+
+    <!-- ═══ Hatırlatmalar ═══ -->
+    <section class="section" id="hatirlatma">
+      <div class="container remind-grid">
+        <div class="lock reveal" aria-label="Kilit ekranında Lexote bildirimleri">
+          <div class="lock-screen">
+            <div class="lock-island"></div>
+            <p class="lock-date">Pazartesi 12 Ekim</p>
+            <p class="lock-time">09:41</p>
+            <div class="notif">
+              <span class="app-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="#C9A84C" stroke-width="1"/><text x="16" y="21.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="16" fill="#C9A84C">L</text></svg></span>
+              <span class="notif-top"><span>LEXOTE</span><span>şimdi</span></span>
+              <span class="notif-title">Yaklaşan süre</span>
+              <span class="notif-body">Yarın doluyor: Ödeme emrine itiraz</span>
+            </div>
+            <div class="notif">
+              <span class="app-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="#C9A84C" stroke-width="1"/><text x="16" y="21.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="16" fill="#C9A84C">L</text></svg></span>
+              <span class="notif-top"><span>LEXOTE</span><span>08:30</span></span>
+              <span class="notif-title">Günlük Özet</span>
+              <span class="notif-body">5 aktif notunuz var. 1 tanesi kritik sürede.</span>
+            </div>
+            <div class="notif">
+              <span class="app-icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="#C9A84C" stroke-width="1"/><text x="16" y="21.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="16" fill="#C9A84C">L</text></svg></span>
+              <span class="notif-top"><span>LEXOTE</span><span>dün</span></span>
+              <span class="notif-title">Süre Uyarısı — Hakem heyeti kararına itiraz</span>
+              <span class="notif-body">Süreye 7 günden az kaldı.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <p class="eyebrow">Hatırlatmalar</p>
+          <h2>Süre dolmadan, <em>zamanında</em> haber verir.</h2>
+          <p class="lead mt mb">Son günü olan her not için hatırlatmalar kendiliğinden kurulur. Hangilerinin geleceğini Ayarlar'dan seçersiniz.</p>
+          <ol class="timeline">
+            <li><span class="when">7 gün kala</span><div><strong>Renk değişimi</strong><p>Not yeşilden turuncuya geçtiğinde: <q>Süreye 7 günden az kaldı.</q></p></div></li>
+            <li><span class="when">1 gün kala</span><div><strong>Kritik uyarı</strong><p>Süresi 24 saatten az kalan notlar için: <q>Yarın doluyor.</q></p></div></li>
+            <li><span class="when">Son gün</span><div><strong>Süre doldu</strong><p>Süre bittiği anda son bir bildirim.</p></div></li>
+            <li><span class="when">Her gün</span><div><strong>Günlük özet</strong><p>Belirlediğiniz saatte aktif notlarınızın ve kritik olanların sayısı.</p></div></li>
+          </ol>
+          <p class="remind-note">Misafir modunda yalnızca kritik bildirimler gönderilir.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Güven ═══ -->
+    <section class="section" id="guven">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Veriler</p>
+          <h2>Notlarınız <em>nerede</em>, açıkça yazıyor.</h2>
+        </div>
+        <div class="trust reveal">
+          <div><h3>Frankfurt'ta saklanır</h3><p>Notlarınız Google Cloud Firestore'da, Frankfurt (Almanya) veri merkezinde tutulur.</p></div>
+          <div><h3>Şifreli iletişim</h3><p>Uygulama ile sunucu arasındaki tüm iletişim TLS ile şifrelenir.</p></div>
+          <div><h3>Hesapla birlikte silinir</h3><p>Hesabınızı sildiğinizde notlarınız ve ses kayıtlarınız sunucudan otomatik olarak silinir.</p></div>
+        </div>
+        <p class="trust-foot"><a class="link-arrow" href="privacy.html">Gizlilik politikası ve aydınlatma metni
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+      </div>
+    </section>
+
+    <!-- ═══ SSS ═══ -->
+    <section class="section" id="sss">
+      <div class="container faq-grid">
+        <div class="reveal">
+          <p class="eyebrow">Sorular</p>
+          <h2>Sık <em>sorulanlar</em></h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Lexote son günü nasıl hesaplıyor?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer">
+              <p>Tebliğ tarihini ve süreyi seçersiniz. Gün olarak belirlenen sürede tebliğ günü sayılmaz; hafta ve ay olarak belirlenen süre son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92).</p>
+              <p>Aradaki tatiller süreye dahildir; son gün resmî tatile rastlarsa süre izleyen ilk iş günü biter (HMK m.93). Adli tatile tabi işlerde son gün 20 Temmuz–31 Ağustos arasına düşerse süre 7 Eylül'e uzar (HMK m.104). E-tebligatta tebliğ, ulaştığı günü izleyen beşinci günün sonunda yapılmış sayılır (Tebligat K. m.7/a).</p>
+            </div>
+          </details>
+          <details>
+            <summary>Hesaplanan son güne güvenebilir miyim?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Hesaplama bilgi amaçlıdır ve uygulamada her sonucun altında bu uyarı yer alır. Adli tatil ve özel düzenlemeler için mevzuatı teyit edin; nihai değerlendirme avukata aittir.</p></div>
+          </details>
+          <details>
+            <summary>Hesap açmadan kullanabilir miyim?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Evet. “Kayıt olmadan devam et” ile misafir olarak başlayabilirsiniz. Daha sonra hesap oluşturduğunuzda misafir olarak eklediğiniz notlar yeni hesabınıza aktarılır. Misafir modunda yalnızca kritik bildirimler gönderilir.</p></div>
+          </details>
+          <details>
+            <summary>Lexote ücretli mi?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Hayır, Lexote şu an ücretsizdir.</p></div>
+          </details>
+          <details>
+            <summary>Verilerim nerede saklanıyor?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Notlarınız Google Cloud Firestore'da, Frankfurt (Almanya) veri merkezinde saklanır; ses kayıtları Firebase depolama alanında tutulur. Ayrıntılar <a href="privacy.html">gizlilik politikasında</a>.</p></div>
+          </details>
+          <details>
+            <summary>Hangi cihazlarda çalışır?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>iPhone ve Android telefonlarda çalışır. Uygulama Türkçe ve İngilizce kullanılabilir; koyu ve açık tema seçeneği vardır. App Store ve Google Play sayfaları yakında açılacak.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ İndirme ═══ -->
+    <section class="download" id="indir">
+      <div class="container reveal">
+        <svg class="mark-lg" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="15.5" fill="none" stroke="#C9A84C" stroke-width=".6"/>
+          <text x="16" y="22.2" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="18" font-weight="300" fill="#C9A84C">L</text>
+        </svg>
+        <h2>Yakında App Store ve <span class="nowrap"><em>Google Play</em>'de.</span></h2>
+        <p class="lead">Lexote mağaza incelemesinde. Yayına girdiğinde bu sayfadaki düğmeler mağaza sayfalarına bağlanacak.</p>
+        <div class="stores">
+          <span class="store" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 1.43c0 1.14-.42 2.2-1.11 2.99-.79.9-2.09 1.6-3.2 1.51-.14-1.1.42-2.26 1.09-3 .77-.85 2.1-1.5 3.22-1.5zM20.5 17.02c-.55 1.27-.82 1.84-1.53 2.96-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.94-1-4.03-.99-2.09.01-2.53 1.01-4.07.99-1.73-.02-3.05-1.78-4.04-3.34C-.04 15.9-.3 10.66 1.4 8.03c1.09-1.69 2.81-2.68 4.43-2.68 1.65 0 2.69 1.02 4.06 1.02 1.33 0 2.14-1.02 4.05-1.02 1.44 0 2.97.79 4.06 2.15-3.57 1.96-2.99 7.06 0 9.52z"/></svg>
+            <span><small>Yakında</small><strong>App Store</strong></span>
+          </span>
+          <span class="store" aria-disabled="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.2-.4.5-.4.9v17.6c0 .4.1.7.4.9l.1.1L13.5 12v-.1L3.7 2.2l-.1.1z" fill="#8CC7B5"/><path d="M17 15.3 13.5 12v-.1L17 8.7l4.2 2.4c1.2.7 1.2 1.8 0 2.5L17 15.3z" fill="#DCC27A"/><path d="M17.1 15.4 13.5 12 3.6 21.8c.4.4 1 .5 1.7.1l11.8-6.5" fill="#C9A84C"/><path d="M17.1 8.6 5.3 2.1c-.7-.4-1.3-.3-1.7.1L13.5 12l3.6-3.4z" fill="#4CAF7D"/></svg>
+            <span><small>Yakında</small><strong>Google Play</strong></span>
+          </span>
+        </div>
+        <p class="contact">Sorularınız için: <a href="mailto:info@lexote.com.tr">info@lexote.com.tr</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══ Alt bilgi ═══ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="index.html">
-            <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
-              <circle cx="16" cy="16" r="16" fill="#0a0a0a"/>
-              <circle cx="16" cy="16" r="15" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
-              <text x="16" y="23" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#c9a84c">L</text>
+          <a class="brand" href="./">
+            <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+              <circle cx="16" cy="16" r="15.3" fill="none" stroke="#C9A84C" stroke-width="1"/>
+              <text x="16" y="22.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="18.5" font-weight="400" fill="#C9A84C">L</text>
             </svg>
             <span class="brand-name">Lexote</span>
           </a>
-          <p>Avukatlar için akıllı dava ve süre takip uygulaması.</p>
+          <p>Avukatlar için süre ve not takibi.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Uygulama</h4>
+          <a href="#hesap">Süre hesabı</a>
+          <a href="#ozellikler">Özellikler</a>
+          <a href="#hatirlatma">Hatırlatmalar</a>
+          <a href="#sss">Sorular</a>
         </div>
         <div class="footer-col">
           <h4>Yasal</h4>
@@ -245,83 +407,63 @@
           <a href="mailto:info@lexote.com.tr">info@lexote.com.tr</a>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 Lexote. Tüm hakları saklıdır.</div>
+      <div class="footer-bottom"><span>© 2026 Lexote. Tüm hakları saklıdır.</span><span>Hesaplamalar bilgi amaçlıdır.</span></div>
     </div>
   </footer>
 
   <script>
-    // ── Navbar scroll + hamburger ──
+    // ── Üst çubuk + menü ──
     const navbar = document.getElementById('navbar');
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    navToggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
+    const setMenu = (open) => {
+      navLinks.classList.toggle('open', open);
       navToggle.classList.toggle('open', open);
       navToggle.setAttribute('aria-expanded', String(open));
-    });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      navLinks.classList.remove('open'); navToggle.classList.remove('open');
-    }));
+      navToggle.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+    };
+    navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+    navLinks.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
-    // ── Scroll reveal (Intersection Observer) ──
+    // ── Giriş bildirimi ──
+    requestAnimationFrame(() => document.getElementById('hero').classList.add('loaded'));
+
+    // ── Kaydırınca beliren ──
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          if (e.target.id === 'steps') e.target.classList.add('animate');
-          io.unobserve(e.target);
-        }
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
       });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-    const steps = document.getElementById('steps');
-    if (steps) io.observe(steps);
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-    // ── Hero particle effect (subtle altın noktalar) ──
-    (function () {
-      const canvas = document.getElementById('hero-canvas');
-      if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const ctx = canvas.getContext('2d');
-      let w, h, particles, raf;
-      const COUNT = 46;
-      function resize() {
-        w = canvas.width = canvas.offsetWidth;
-        h = canvas.height = canvas.offsetHeight;
-      }
-      function init() {
-        particles = Array.from({ length: COUNT }, () => ({
-          x: Math.random() * w, y: Math.random() * h,
-          r: Math.random() * 1.6 + 0.4,
-          vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
-          a: Math.random() * 0.5 + 0.2,
-        }));
-      }
-      function draw() {
-        ctx.clearRect(0, 0, w, h);
-        for (const p of particles) {
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0 || p.x > w) p.vx *= -1;
-          if (p.y < 0 || p.y > h) p.vy *= -1;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(201, 168, 76, ' + p.a + ')';
-          ctx.fill();
-        }
-        raf = requestAnimationFrame(draw);
-      }
-      resize(); init(); draw();
-      window.addEventListener('resize', () => { cancelAnimationFrame(raf); resize(); init(); draw(); });
-    })();
+    // ── Süre filtresi (uygulamadaki filtrenin aynısı) ──
+    const filterButtons = document.querySelectorAll('#legend button');
+    const cards = document.querySelectorAll('.note-card');
+    const activeCount = document.getElementById('activeCount');
+    filterButtons.forEach((btn) => btn.addEventListener('click', () => {
+      const on = btn.getAttribute('aria-pressed') !== 'true';
+      filterButtons.forEach((b) => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', String(on));
+      const color = on ? btn.dataset.filter : null;
+      let shown = 0;
+      cards.forEach((card) => {
+        const visible = !color || card.dataset.color === color;
+        card.classList.toggle('is-hidden', !visible);
+        if (visible) shown++;
+      });
+      activeCount.textContent = String(shown);
+    }));
 
     // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
     const messages = [
-      'Davalarınız bekliyor — Lexote',
-      'Notlarınız sizi bekliyor — Lexote',
       'Süreniz dolmadan dönün — Lexote',
-      'Hukuki süreciniz devam ediyor — Lexote'
+      'Notlarınız sizi bekliyor — Lexote',
+      'Son gün yaklaşıyor — Lexote'
     ];
     let messageIndex = 0;
     let messageInterval = null;
