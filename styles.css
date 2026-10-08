@@ -5,10 +5,13 @@
    Ana sayfa + gizlilik / koşullar sayfaları bu dosyayı paylaşır.
    ═══════════════════════════════════════════════════════════ */
 
+/* Newsreader (OFL): kullanılan ağırlık aralığına indirildi (düz 300–500,
+   italik 300–400); -latin-ext dosyaları yalnızca Latin Genişletilmiş-A
+   (Türkçe ğ Ğ ı İ ş Ş dâhil) içerir. */
 @font-face {
   font-family: 'Newsreader'; font-style: normal; font-weight: 300 500; font-display: swap;
   src: url(fonts/newsreader-latin-ext.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-0130, U+0132-017F;
 }
 @font-face {
   font-family: 'Newsreader'; font-style: normal; font-weight: 300 500; font-display: swap;
@@ -18,7 +21,7 @@
 @font-face {
   font-family: 'Newsreader'; font-style: italic; font-weight: 300 400; font-display: swap;
   src: url(fonts/newsreader-italic-latin-ext.woff2) format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  unicode-range: U+0100-0130, U+0132-017F;
 }
 @font-face {
   font-family: 'Newsreader'; font-style: italic; font-weight: 300 400; font-display: swap;
@@ -211,7 +214,7 @@ a.store:hover { border-color: var(--gold); color: var(--text); }
   background: radial-gradient(45% 45% at 50% 40%, rgba(220, 194, 122, 0.12), transparent 100%);
 }
 .download .container { position: relative; }
-.download h2 { font-size: clamp(56px, 9vw, 128px); line-height: .95; letter-spacing: -0.03em; margin: 0 0 40px; }
+.download h1, .download h2 { font-size: clamp(56px, 9vw, 128px); line-height: .95; letter-spacing: -0.03em; margin: 0 0 40px; }
 .download .stores { justify-content: center; }
 .download .contact { margin-top: 32px; font-size: 15px; color: var(--muted); }
 .download .contact a { color: var(--text); border-bottom: 1px solid var(--line); transition: color .2s, border-color .2s; }
@@ -229,12 +232,12 @@ a.store:hover { border-color: var(--gold); color: var(--text); }
 .footer { border-top: 1px solid var(--line-soft); padding: 56px 0 32px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; }
 .footer-brand p { margin-top: 12px; color: var(--muted); font-size: 14.5px; max-width: 26em; }
-.footer-col h4 { font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.footer-col h2 { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
 .footer-col a { display: flex; align-items: center; min-height: 36px; color: var(--text-2); font-size: 15px; }
 .footer-col a:hover { color: var(--text); }
 .footer-bottom {
   margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--line-soft);
-  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: #5d7a73;
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--muted);
 }
 
 /* ═══ Yasal sayfalar (gizlilik / koşullar) ═══ */
