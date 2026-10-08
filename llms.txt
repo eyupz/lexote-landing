@@ -1,12 +1,30 @@
 # Lexote
 
-Lexote, Türkiye'deki avukatlar için bir süre ve not takip uygulamasıdır (iPhone ve Android, Türkçe ve İngilizce).
+> Lexote, Türkiye'de çalışan avukatlar için bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günü kanuna göre hesaplar, kalan süreyi renkle gösterir ve süre dolmadan hatırlatır. iPhone ve Android için; Türkçe ve İngilizce. Şu anda ücretsiz: uygulama içi satın alma, abonelik ve reklam yok. App Store ve Google Play'de yakında.
 
-- Süre hesabı, aciliyet renkleri ve süre filtresi
-- Süre dolmadan hatırlatma bildirimleri
-- Dosya notları ve sesli notlar
-- App Store ve Google Play: yakında
+## Ne yapar
+- Tebliğ tarihinden son gün hesabı; hazır süreler: 1 hafta, 2 hafta, 10, 15, 30, 60 gün, 1 ay. Son gün ve saat takvimden de seçilebilir.
+- Kalan süreye göre renkli aciliyet gösterimi (24 saatten az / 1-7 gün / 7 günden fazla) ve süre filtresi.
+- Hatırlatma: süre dolmadan 24 saat önce ve süre dolduğunda; kayıtlı hesaplarda ayrıca 7 gün kala ve günlük özet. Hatırlatmalar telefonda planlanır, uygulama kapalıyken de gelir.
+- Dosya notları (mahkeme, dosya numarası, açıklama) ve sesli not.
+- Hesap açmadan misafir olarak kullanım; e-postayla kayıt olununca notlar hesaba aktarılır.
 
-İletişim: info@lexote.com.tr · https://lexote.com.tr
-Gizlilik Politikası: https://lexote.com.tr/privacy.html
-Kullanım Koşulları: https://lexote.com.tr/terms.html
+## Süre hesabı kuralları
+- Gün olarak belirlenen sürelerde tebliğ günü sayılmaz; hafta ve ay süreleri son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92).
+- Aradaki resmî tatiller süreye dâhildir; son gün hafta sonuna veya resmî tatile rastlarsa süre izleyen ilk iş günü biter (HMK m.93).
+- Elektronik tebligat, elektronik adrese ulaştığı tarihi izleyen beşinci günün sonunda yapılmış sayılır (Tebligat Kanunu m.7/a).
+- Adli tatile tabi işlerde son gün adli tatile (20 Temmuz–31 Ağustos) rastlarsa süre 7 Eylül'e uzar (HMK m.104).
+- Kanunda iş günü olarak belirlenen süreler için ayrı seçenek vardır.
+- Son günün bitiş saati 17:00 olarak alınır. Hesaplar bilgi amaçlıdır; Lexote hukuki danışmanlık vermez.
+
+## Gizlilik
+- Notlar yalnızca kullanıcının hesabıyla erişilebilir, Google Cloud altyapısında şifreli saklanır; veritabanı Frankfurt'ta (Almanya).
+- Reklam kimliği kullanılmaz, kullanıcı izlenmez.
+
+## Sayfalar
+- [Ana sayfa](https://lexote.com.tr/): tanıtım ve sık sorulan sorular
+- [Gizlilik Politikası ve KVKK Aydınlatma Metni](https://lexote.com.tr/privacy.html)
+- [Kullanım Koşulları](https://lexote.com.tr/terms.html)
+
+## İletişim
+- E-posta: info@lexote.com.tr

@@ -1,0 +1,23 @@
+{
+  "name": "Lexote",
+  "short_name": "Lexote",
+  "description": "Avukatlar için süre ve not takibi.",
+  "lang": "tr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#111715",
+  "theme_color": "#0c110f",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

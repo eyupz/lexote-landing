@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Lexote — Gün saymayı bırakın</title>
+  <title>Lexote — Avukatlar için süre takibi ve son gün hesabı</title>
   <meta name="description" content="Gün saymayı bırakın. Tebliğ tarihini girin, son günü Lexote bulsun; süre yaklaşınca da ilk o hatırlatsın. Avukatlar için süre ve not takibi." />
   <meta name="author" content="Lexote" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://lexote.com.tr/" />
   <meta name="theme-color" content="#0c110f" />
   <link id="favicon" rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
 
   <meta property="og:type" content="website" />
@@ -31,30 +32,166 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Lexote",
-    "url": "https://lexote.com.tr/",
-    "inLanguage": "tr"
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "Lexote",
-    "description": "Avukatlar için süre ve not takip uygulaması. Tebliğ tarihini girin, son günü Lexote bulsun; süre yaklaşınca da ilk o hatırlatsın.",
-    "url": "https://lexote.com.tr/",
-    "image": "https://lexote.com.tr/icon-512.png",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "iOS, Android",
-    "inLanguage": ["tr", "en"],
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
-    "author": { "@type": "Organization", "name": "Lexote", "email": "info@lexote.com.tr", "url": "https://lexote.com.tr/", "logo": "https://lexote.com.tr/icon-512.png" }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://lexote.com.tr/#organization",
+        "name": "Lexote",
+        "url": "https://lexote.com.tr/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lexote.com.tr/icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "email": "info@lexote.com.tr",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "info@lexote.com.tr",
+          "availableLanguage": [
+            "Turkish",
+            "English"
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lexote.com.tr/#website",
+        "name": "Lexote",
+        "url": "https://lexote.com.tr/",
+        "inLanguage": "tr",
+        "publisher": {
+          "@id": "https://lexote.com.tr/#organization"
+        }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://lexote.com.tr/#app",
+        "name": "Lexote",
+        "description": "Avukatlar için süre ve not takip uygulaması. Tebliğ tarihini girin, son günü Lexote bulsun; süre yaklaşınca da ilk o hatırlatsın.",
+        "url": "https://lexote.com.tr/",
+        "image": "https://lexote.com.tr/icon-512.png",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "iOS, Android",
+        "inLanguage": [
+          "tr",
+          "en"
+        ],
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Avukatlar"
+        },
+        "featureList": [
+          "Tebliğ tarihinden son gün hesabı (HMK m.92, m.93, m.104; Tebligat Kanunu m.7/a)",
+          "E-tebligat, iş günü ve adli tatil seçenekleri",
+          "Kalan süreye göre renkli aciliyet gösterimi ve süre filtresi",
+          "Süre dolmadan 24 saat önce ve süre dolduğunda bildirim",
+          "Dosya notları ve sesli not",
+          "Hesap açmadan misafir olarak kullanım"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "TRY"
+        },
+        "publisher": {
+          "@id": "https://lexote.com.tr/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://lexote.com.tr/#sss",
+        "inLanguage": "tr",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Lexote nedir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lexote, Türkiye'de çalışan avukatlar için hazırlanmış bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günü hesaplar, kalan süreyi renkle gösterir ve süre dolmadan hatırlatır. iPhone ve Android için hazırlanmıştır; Türkçe ve İngilizce kullanılabilir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Son gün nasıl hesaplanıyor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gün olarak belirlenen sürelerde tebliğ günü sayılmaz; hafta ve ay olarak belirlenen süreler, son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92). Aradaki resmî tatiller süreye dâhildir; son gün hafta sonuna ya da resmî tatile rastlarsa süre izleyen ilk iş günü biter (HMK m.93). Lexote, son günün bitiş saatini 17:00 olarak alır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "E-tebligat ve adli tatil hesaba katılıyor mu?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Evet. Elektronik tebligat, muhatabın elektronik adresine ulaştığı tarihi izleyen beşinci günün sonunda yapılmış sayılır (Tebligat Kanunu m.7/a); \"E-tebligat ile geldi\" seçeneği açıldığında süre bu günden başlar. Adli tatile tabi işlerde son gün adli tatile (20 Temmuz–31 Ağustos) rastlarsa süre 7 Eylül'e uzar (HMK m.104)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hangi süreleri seçebilirim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1 hafta, 2 hafta, 10, 15, 30 ve 60 gün ile 1 ay hazır seçenek olarak bulunur. Kanunda iş günü olarak belirlenen süreler için ayrı bir seçenek vardır. Dilerseniz son günü ve saati doğrudan takvimden de seçebilirsiniz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hatırlatmalar ne zaman gelir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Süre dolmadan 24 saat önce ve süre dolduğunda bildirim gelir. Kayıtlı hesaplarda ayrıca 7 gün kala hatırlatma ve her gün seçtiğiniz saatte aktif notlarınızın özeti gönderilir. Hatırlatmalar telefonunuzda planlanır; uygulama kapalıyken de gelir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Lexote ücretli mi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lexote şu anda ücretsizdir; uygulama içi satın alma, abonelik ve reklam yoktur."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hesap açmadan kullanabilir miyim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Evet. \"Kayıt olmadan devam et\" ile e-posta vermeden başlayabilirsiniz. Misafir notlarınız o cihazdaki misafir oturumuna bağlıdır; e-postayla kayıt olduğunuzda notlarınız hesabınıza aktarılır ve tüm cihazlarınızdan erişilebilir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Verilerim nerede ve nasıl saklanıyor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Notlarınız yalnızca sizin hesabınızla erişilebilir şekilde, Google Cloud altyapısında şifreli olarak saklanır; veritabanı Frankfurt'tadır (Almanya). Uygulama reklam kimliği kullanmaz ve kullanıcıları izlemez. Ayrıntılar Gizlilik Politikası'ndadır."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Lexote hukuki danışmanlık verir mi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hayır. Lexote bir not ve hatırlatma aracıdır; süre hesapları bilgi amaçlıdır. Kesin süreler için ilgili mevzuatı ve dosya kayıtlarını esas alın."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ne zaman indirebilirim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lexote yakında App Store ve Google Play'de olacak. Haber almak için info@lexote.com.tr adresine yazabilirsiniz."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
   <script>document.documentElement.classList.add('js')</script>
-  <link rel="stylesheet" href="styles.css?v=20261008l" />
+  <link rel="stylesheet" href="styles.css?v=20261008m" />
 </head>
 <body>
 
@@ -70,6 +207,7 @@
       <nav class="nav-links" id="navLinks" aria-label="Sayfa içi">
         <a href="#ekranlar">Ekranlar</a>
         <a href="#hatirlatma">Hatırlatma</a>
+        <a href="#sss">Sorular</a>
         <a class="nav-cta" href="#indir">Yakında</a>
       </nav>
       <div class="nav-actions">
@@ -145,6 +283,60 @@
       <div class="band-caption">
         <div class="container">
           <h2>Siz duruşmadayken, <em>o nöbette.</em></h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ Sık sorulan sorular: arama motorları ve yapay zekâ yanıtları için metin (yapısal veri ile birebir aynı) ═══ -->
+    <section class="section faq" id="sss" aria-labelledby="sss-baslik">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Sorular</p>
+            <h2 id="sss-baslik">Sık sorulan <em>sorular.</em></h2>
+          </div>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary><h3>Lexote nedir?</h3></summary>
+            <p>Lexote, Türkiye'de çalışan avukatlar için hazırlanmış bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günü hesaplar, kalan süreyi renkle gösterir ve süre dolmadan hatırlatır. iPhone ve Android için hazırlanmıştır; Türkçe ve İngilizce kullanılabilir.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Son gün nasıl hesaplanıyor?</h3></summary>
+            <p>Gün olarak belirlenen sürelerde tebliğ günü sayılmaz; hafta ve ay olarak belirlenen süreler, son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92). Aradaki resmî tatiller süreye dâhildir; son gün hafta sonuna ya da resmî tatile rastlarsa süre izleyen ilk iş günü biter (HMK m.93). Lexote, son günün bitiş saatini 17:00 olarak alır.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>E-tebligat ve adli tatil hesaba katılıyor mu?</h3></summary>
+            <p>Evet. Elektronik tebligat, muhatabın elektronik adresine ulaştığı tarihi izleyen beşinci günün sonunda yapılmış sayılır (Tebligat Kanunu m.7/a); "E-tebligat ile geldi" seçeneği açıldığında süre bu günden başlar. Adli tatile tabi işlerde son gün adli tatile (20 Temmuz–31 Ağustos) rastlarsa süre 7 Eylül'e uzar (HMK m.104).</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Hangi süreleri seçebilirim?</h3></summary>
+            <p>1 hafta, 2 hafta, 10, 15, 30 ve 60 gün ile 1 ay hazır seçenek olarak bulunur. Kanunda iş günü olarak belirlenen süreler için ayrı bir seçenek vardır. Dilerseniz son günü ve saati doğrudan takvimden de seçebilirsiniz.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Hatırlatmalar ne zaman gelir?</h3></summary>
+            <p>Süre dolmadan 24 saat önce ve süre dolduğunda bildirim gelir. Kayıtlı hesaplarda ayrıca 7 gün kala hatırlatma ve her gün seçtiğiniz saatte aktif notlarınızın özeti gönderilir. Hatırlatmalar telefonunuzda planlanır; uygulama kapalıyken de gelir.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Lexote ücretli mi?</h3></summary>
+            <p>Lexote şu anda ücretsizdir; uygulama içi satın alma, abonelik ve reklam yoktur.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Hesap açmadan kullanabilir miyim?</h3></summary>
+            <p>Evet. "Kayıt olmadan devam et" ile e-posta vermeden başlayabilirsiniz. Misafir notlarınız o cihazdaki misafir oturumuna bağlıdır; e-postayla kayıt olduğunuzda notlarınız hesabınıza aktarılır ve tüm cihazlarınızdan erişilebilir.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Verilerim nerede ve nasıl saklanıyor?</h3></summary>
+            <p>Notlarınız yalnızca sizin hesabınızla erişilebilir şekilde, Google Cloud altyapısında şifreli olarak saklanır; veritabanı Frankfurt'tadır (Almanya). Uygulama reklam kimliği kullanmaz ve kullanıcıları izlemez. Ayrıntılar <a href="privacy.html">Gizlilik Politikası</a>'ndadır.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Lexote hukuki danışmanlık verir mi?</h3></summary>
+            <p>Hayır. Lexote bir not ve hatırlatma aracıdır; süre hesapları bilgi amaçlıdır. Kesin süreler için ilgili mevzuatı ve dosya kayıtlarını esas alın.</p>
+          </details>
+          <details class="faq-item">
+            <summary><h3>Ne zaman indirebilirim?</h3></summary>
+            <p>Lexote yakında App Store ve Google Play'de olacak. Haber almak için <a href="mailto:info@lexote.com.tr?subject=Lexote">info@lexote.com.tr</a> adresine yazabilirsiniz.</p>
+          </details>
         </div>
       </div>
     </section>
