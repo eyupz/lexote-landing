@@ -1,36 +1,12 @@
 # Lexote
 
-Lexote, Türkiye'deki avukatlar için bir süre ve not takip uygulamasıdır (iPhone ve Android). Uygulama Türkçe ve İngilizce kullanılabilir.
+Lexote, Türkiye'deki avukatlar için bir süre ve not takip uygulamasıdır (iPhone ve Android, Türkçe ve İngilizce).
 
-## Süre hesabı
-Tebliğ tarihi ve süre seçilir; uygulama son günü şu kurallara göre hesaplar ve gerekçesini gösterir:
-- HMK m.92: Gün olarak belirlenen sürede tebliğ günü sayılmaz; hafta ve ay olarak belirlenen süre, son hafta veya ayda başladığı güne karşılık gelen günde biter.
-- HMK m.93: Aradaki tatiller süreye dahildir; son gün resmî tatile rastlarsa süre izleyen ilk iş günü biter.
-- HMK m.104: Adli tatile tabi işlerde son gün 20 Temmuz–31 Ağustos arasına düşerse süre 7 Eylül'e uzar.
-- Tebligat Kanunu m.7/a: Elektronik tebligat, ulaştığı günü izleyen beşinci günün sonunda yapılmış sayılır.
-- İsteğe bağlı: süreyi iş günü olarak sayma (yalnızca kanunda iş günüyle belirlenen süreler için).
-Hesaplama bilgi amaçlıdır; mevzuatın teyit edilmesi gerekir.
+- Süre hesabı, aciliyet renkleri ve süre filtresi
+- Süre dolmadan hatırlatma bildirimleri
+- Dosya notları ve sesli notlar
+- App Store ve Google Play: yakında
 
-## Özellikler
-- Not: mahkeme/kurum, dosya numarası, açıklama, sesli not (bir nota birden fazla kayıt)
-- Aciliyet renkleri: kırmızı (24 saatten az), turuncu (1–7 gün), yeşil (7 günden fazla) ve süre filtresi
-- Hatırlatmalar: 7 gün kala, 1 gün kala, süre dolduğunda; isteğe bağlı günlük özet
-- Arama, Tamamlananlar sekmesi, 30 günlük çöp kutusu
-- Hesap açmadan misafir olarak kullanım; sonradan hesap oluşturulunca notlar aktarılır
-- Koyu ve açık tema
-
-## Veriler
-- Notlar Google Cloud Firestore'da, Frankfurt (Almanya) veri merkezinde saklanır.
-- İletişim TLS ile şifrelenir. Hesap silindiğinde notlar ve ses kayıtları sunucudan silinir.
-
-## Durum
-- App Store ve Google Play: yakında (mağaza incelemesinde)
-- Ücret: şu an ücretsiz
-
-## İletişim
-- E-posta: info@lexote.com.tr
-- Web: https://lexote.com.tr
-
-## Yasal
-- Gizlilik Politikası: https://lexote.com.tr/privacy.html
-- Kullanım Koşulları: https://lexote.com.tr/terms.html
+İletişim: info@lexote.com.tr · https://lexote.com.tr
+Gizlilik Politikası: https://lexote.com.tr/privacy.html
+Kullanım Koşulları: https://lexote.com.tr/terms.html

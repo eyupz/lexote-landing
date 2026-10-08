@@ -4,14 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Lexote — Avukatlar için süre takibi</title>
-  <meta name="description" content="Lexote, avukatlar için süre ve not takip uygulamasıdır. Son günü HMK ve Tebligat Kanunu kurallarına göre hesaplar, süre dolmadan hatırlatır." />
+  <meta name="description" content="Lexote, avukatlar için süre ve not takip uygulaması. Yakında App Store ve Google Play'de." />
   <meta name="author" content="Lexote" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lexote.com.tr/" />
   <meta name="theme-color" content="#0c110f" />
   <link id="favicon" rel="icon" type="image/svg+xml" href="favicon-active.svg" />
   <link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="img/hero-poster.webp" as="image" type="image/webp" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lexote.com.tr/" />
@@ -30,7 +29,7 @@
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "Lexote",
-    "description": "Avukatlar için süre ve not takip uygulaması. Tebliğ tarihinden son günü resmî tatil, adli tatil ve e-tebligat kurallarını dikkate alarak hesaplar; süre dolmadan hatırlatır.",
+    "description": "Avukatlar için süre ve not takip uygulaması.",
     "url": "https://lexote.com.tr",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "iOS, Android",
@@ -41,7 +40,7 @@
   </script>
 
   <script>document.documentElement.classList.add('js')</script>
-  <link rel="stylesheet" href="styles.css?v=20261008b" />
+  <link rel="stylesheet" href="styles.css?v=20261008c" />
 </head>
 <body>
 
@@ -57,7 +56,6 @@
       <nav class="nav-links" id="navLinks" aria-label="Sayfa içi">
         <a href="#ekranlar">Uygulama</a>
         <a href="#hatirlatma">Hatırlatmalar</a>
-        <a href="#kurallar">Kurallar</a>
         <a class="nav-cta" href="#indir">Yakında</a>
       </nav>
       <div class="nav-actions">
@@ -70,25 +68,20 @@
   </header>
 
   <main>
-    <!-- ═══ Giriş: tam ekran Raylight videosu (media/lexote-hero.mp4).
-         Video yoksa / oynatılamazsa altındaki CSS 3D sahne görünür.
-         Ücretsiz planda videonun sağ altındaki "Made in Raylight" etiketi
-         Raylight koşulları gereği görünür kalır: video sağ-alta hizalı,
-         o köşe karartılmaz. Etiketsiz dışa aktarım gelince yalnızca dosya değişir. ═══ -->
+    <!-- ═══ Giriş: Raylight videosu tam ekran. Kaynak ekran boyutuna göre seçilir:
+         telefon (dikey) → hero-mobile, geniş/yoğun ekran → hero-1440, diğerleri → hero-1080 ═══ -->
     <section class="hero" id="hero" aria-label="Lexote tanıtımı">
-      <div class="scene" id="scene" aria-hidden="true">
-        <div class="floor"></div>
-        <div class="rig" id="rig">
-          <div class="rig-spin">
-            <div class="dev left"><span class="dev-edge"></span><span class="dev-body"></span><img src="img/app-sure-hesabi.webp" alt="" width="720" height="1564" /></div>
-            <div class="dev right"><span class="dev-edge"></span><span class="dev-body"></span><img src="img/app-filtre.webp" alt="" width="720" height="1564" /></div>
-            <div class="dev front"><span class="dev-edge"></span><span class="dev-body"></span><img src="img/app-ana-ekran-2.webp" alt="" width="720" height="1564" fetchpriority="high" /></div>
-          </div>
-        </div>
-      </div>
-      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.webp" aria-hidden="true">
-        <source src="media/lexote-hero.mp4" type="video/mp4" />
-      </video>
+      <video class="hero-video" id="heroVideo" muted loop playsinline preload="none" aria-hidden="true"></video>
+      <script>
+        (function () {
+          var v = document.getElementById('heroVideo');
+          var portrait = window.matchMedia('(max-aspect-ratio: 4/5)').matches;
+          var px = window.innerWidth * Math.min(window.devicePixelRatio || 1, 2);
+          v.poster = portrait ? 'img/hero-poster-mobile.webp' : 'img/hero-poster.webp';
+          v.src = portrait ? 'media/hero-mobile.mp4' : (px > 2400 ? 'media/hero-1440.mp4' : 'media/hero-1080.mp4');
+          v.preload = 'auto';
+        })();
+      </script>
       <div class="hero-shade"></div>
 
       <div class="container">
@@ -102,10 +95,9 @@
           <a class="btn btn-gold rise d5" href="#ekranlar">Uygulamayı keşfet <span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
-      <div class="scroll-cue" aria-hidden="true"><i></i>Kaydır</div>
     </section>
 
-    <!-- ═══ Ekranlar ═══ -->
+    <!-- ═══ Ekranlar (kartlara Raylight döngüleri gelince .shot içine video eklenir) ═══ -->
     <section class="section" id="ekranlar">
       <div class="container">
         <div class="section-head reveal">
@@ -117,22 +109,22 @@
         </div>
         <div class="screens">
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">01</span><div class="tilt"><img src="img/app-sure-hesabi.webp" width="720" height="1564" loading="lazy" alt="Süre hesabı ekranı: e-tebligat ve 2 hafta seçili, son gün 27 Ekim 2026 Salı." /></div></div>
-            <figcaption class="screen-label"><div><h3>Süre hesabı</h3><p>Tebliğ tarihini ve süreyi seçin.</p></div></figcaption>
+            <div class="shot"><span class="num">01</span><div class="tilt"><img src="img/app-sure-hesabi.webp" width="720" height="1564" loading="lazy" alt="Lexote süre hesabı ekranı" /></div></div>
+            <figcaption class="screen-label"><h3>Süre hesabı</h3></figcaption>
           </figure>
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">02</span><div class="tilt"><img src="img/app-ana-ekran-2.webp" width="720" height="1564" loading="lazy" alt="Ana ekran: 24 saatten az kalan not kırmızı, diğerleri yeşil." /></div></div>
-            <figcaption class="screen-label"><div><h3>Aciliyet renkleri</h3><p>Kırmızı, turuncu, yeşil.</p></div></figcaption>
+            <div class="shot"><span class="num">02</span><div class="tilt"><img src="img/app-ana-ekran-2.webp" width="720" height="1564" loading="lazy" alt="Lexote ana ekranı, renkli notlar" /></div></div>
+            <figcaption class="screen-label"><h3>Aciliyet renkleri</h3></figcaption>
           </figure>
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">03</span><div class="tilt"><img src="img/app-filtre.webp" width="720" height="1564" loading="lazy" alt="Süre filtresi: 24 saatten az, 1–7 gün, 7 günden fazla." /></div></div>
-            <figcaption class="screen-label"><div><h3>Süre filtresi</h3><p>Acil olanları ayırın.</p></div></figcaption>
+            <div class="shot"><span class="num">03</span><div class="tilt"><img src="img/app-filtre.webp" width="720" height="1564" loading="lazy" alt="Lexote süre filtresi" /></div></div>
+            <figcaption class="screen-label"><h3>Süre filtresi</h3></figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- ═══ Hatırlatmalar: geniş bant (Raylight videosu buraya da gelebilir) ═══ -->
+    <!-- ═══ Hatırlatmalar ═══ -->
     <section class="band" id="hatirlatma" aria-label="Hatırlatmalar">
       <div class="band-stage" aria-hidden="true">
         <div class="lock">
@@ -164,20 +156,8 @@
       <div class="band-caption">
         <div class="container">
           <h2>Süre dolmadan <em>haber verir.</em></h2>
-          <p>7 gün kala, 1 gün kala ve son gün.</p>
         </div>
       </div>
-    </section>
-
-    <!-- ═══ Kanun maddeleri ═══ -->
-    <section class="section" id="kurallar" aria-label="Hesabın dayandığı kurallar">
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>HMK m.92</span><span>HMK m.93</span><span>HMK m.104</span><span>Tebligat K. m.7/a</span>
-          <span>HMK m.92</span><span>HMK m.93</span><span>HMK m.104</span><span>Tebligat K. m.7/a</span>
-        </div>
-      </div>
-      <p class="marquee-note container">Son gün HMK m.92, 93, 104 ve Tebligat K. m.7/a'ya göre hesaplanır. Bilgi amaçlıdır; mevzuatı teyit edin.</p>
     </section>
 
     <!-- ═══ İndirme ═══ -->
@@ -235,7 +215,12 @@
     const navbar = document.getElementById('navbar');
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
-    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
+    let navTicking = false;
+    const onScroll = () => {
+      if (navTicking) return;
+      navTicking = true;
+      requestAnimationFrame(() => { navbar.classList.toggle('scrolled', window.scrollY > 20); navTicking = false; });
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     const setMenu = (open) => {
@@ -247,6 +232,19 @@
     navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
     navLinks.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
+    // ── Videolar: yalnızca ekrandayken ve sekme açıkken oynar (takılmayı önler) ──
+    const videos = [...document.querySelectorAll('video')];
+    const visible = new Set();
+    const sync = (v) => {
+      if (!reduced && !document.hidden && visible.has(v)) v.play().catch(() => {});
+      else v.pause();
+    };
+    const vio = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { e.isIntersecting ? visible.add(e.target) : visible.delete(e.target); sync(e.target); });
+    }, { threshold: 0.05 });
+    videos.forEach((v) => vio.observe(v));
+    document.addEventListener('visibilitychange', () => videos.forEach(sync));
+
     // ── Kaydırınca beliren ──
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -257,27 +255,22 @@
     }, { threshold: 0.18 });
     document.querySelectorAll('.reveal, .band').forEach((el) => io.observe(el));
 
-    // ── 3D sahne: fareyle eğilir ──
-    const rig = document.getElementById('rig');
-    if (rig && finePointer && !reduced) {
-      document.getElementById('hero').addEventListener('pointermove', (e) => {
-        const x = e.clientX / window.innerWidth - 0.5;
-        const y = e.clientY / window.innerHeight - 0.5;
-        rig.style.setProperty('--ry', (-16 + x * 22).toFixed(2) + 'deg');
-        rig.style.setProperty('--rx', (8 - y * 14).toFixed(2) + 'deg');
-      });
-    }
-
     // ── Ekran kartları: imleci takip eden 3D eğim ──
     if (finePointer && !reduced) {
       document.querySelectorAll('.shot').forEach((shot) => {
         const tilt = shot.querySelector('.tilt');
+        if (!tilt) return;
+        let raf = 0;
         shot.addEventListener('pointermove', (e) => {
-          const r = shot.getBoundingClientRect();
-          const x = (e.clientX - r.left) / r.width - 0.5;
-          const y = (e.clientY - r.top) / r.height - 0.5;
-          tilt.style.setProperty('--ty', (x * 26).toFixed(2) + 'deg');
-          tilt.style.setProperty('--tx', (-y * 20).toFixed(2) + 'deg');
+          if (raf) return;
+          raf = requestAnimationFrame(() => {
+            raf = 0;
+            const r = shot.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - 0.5;
+            const y = (e.clientY - r.top) / r.height - 0.5;
+            tilt.style.setProperty('--ty', (x * 26).toFixed(2) + 'deg');
+            tilt.style.setProperty('--tx', (-y * 20).toFixed(2) + 'deg');
+          });
         });
         shot.addEventListener('pointerleave', () => {
           tilt.style.removeProperty('--ty');
@@ -285,13 +278,6 @@
         });
       });
     }
-
-    // ── Raylight videoları: oynamaya başlayınca 3D yedek sahne gizlenir ──
-    document.querySelectorAll('.hero-video, .band video').forEach((video) => {
-      const host = video.closest('.hero, .band');
-      video.addEventListener('playing', () => host.classList.add('has-video'), { once: true });
-      if (reduced) { video.removeAttribute('autoplay'); video.pause(); }
-    });
 
     // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
     const messages = ['Süreniz dolmadan dönün — Lexote', 'Notlarınız sizi bekliyor — Lexote', 'Son gün yaklaşıyor — Lexote'];
