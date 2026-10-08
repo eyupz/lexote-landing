@@ -119,12 +119,14 @@ a.store:hover { border-color: var(--gold); color: var(--text); }
   position: relative; min-height: 100svh; display: flex; align-items: flex-end;
   overflow: hidden; background: var(--bg-deep); padding: 120px 0 clamp(48px, 8vh, 96px);
 }
-.hero-video { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.hero-video { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; object-position: 100% 100%; pointer-events: none; background: var(--bg-deep); }
+.hero:has(.hero-video) .scene { display: none; }
+.hero:has(.hero-video) .scroll-cue { display: none; }
 .hero-shade {
   position: absolute; inset: 0; pointer-events: none; z-index: 2;
   background:
-    linear-gradient(90deg, rgba(12, 17, 15, 0.92) 0%, rgba(12, 17, 15, 0.55) 45%, rgba(12, 17, 15, 0) 75%),
-    linear-gradient(0deg, rgba(12, 17, 15, 0.9) 0%, rgba(12, 17, 15, 0) 35%);
+    linear-gradient(90deg, rgba(12, 17, 15, 0.92) 0%, rgba(12, 17, 15, 0.55) 42%, rgba(12, 17, 15, 0) 68%),
+    radial-gradient(70% 55% at 0% 100%, rgba(12, 17, 15, 0.85), rgba(12, 17, 15, 0) 100%);
 }
 .hero-copy { position: relative; z-index: 3; max-width: 640px; }
 .hero h1 { font-size: clamp(54px, 8.4vw, 116px); line-height: .98; letter-spacing: -0.025em; margin: 18px 0 24px; }
@@ -375,6 +377,9 @@ a.store:hover { border-color: var(--gold); color: var(--text); }
   .dev.left { --t: translate3d(-150px, 30px, -120px) rotateY(24deg); }
   .dev.right { --t: translate3d(150px, -20px, -220px) rotateY(-28deg); }
   .hero-shade { background: linear-gradient(0deg, rgba(12, 17, 15, 0.97) 0%, rgba(12, 17, 15, 0.86) 38%, rgba(12, 17, 15, 0.1) 70%); }
+  .hero:has(.hero-video) { display: block; min-height: 0; padding: 72px 0 56px; }
+  .hero:has(.hero-video) .hero-video { position: relative; inset: auto; height: auto; aspect-ratio: 16 / 9; object-position: 50% 50%; margin-bottom: 36px; }
+  .hero:has(.hero-video) .hero-shade { display: none; }
   .scroll-cue { display: none; }
   .screens { grid-template-columns: 1fr; }
   .screens .screen-card:nth-child(3) { display: block; }

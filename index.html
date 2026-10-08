@@ -11,7 +11,7 @@
   <meta name="theme-color" content="#0c110f" />
   <link id="favicon" rel="icon" type="image/svg+xml" href="favicon-active.svg" />
   <link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="img/app-ana-ekran-2.webp" as="image" type="image/webp" />
+  <link rel="preload" href="img/hero-poster.webp" as="image" type="image/webp" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lexote.com.tr/" />
@@ -41,7 +41,7 @@
   </script>
 
   <script>document.documentElement.classList.add('js')</script>
-  <link rel="stylesheet" href="styles.css?v=20261008" />
+  <link rel="stylesheet" href="styles.css?v=20261008b" />
 </head>
 <body>
 
@@ -70,9 +70,11 @@
   </header>
 
   <main>
-    <!-- ═══ Giriş: tam ekran. Raylight videosu hazır olunca .hero içine
-         <video class="hero-video" src="media/lexote-hero.mp4" autoplay muted loop playsinline poster="..."></video>
-         eklenir; video oynayınca .has-video ile 3D sahne gizlenir. ═══ -->
+    <!-- ═══ Giriş: tam ekran Raylight videosu (media/lexote-hero.mp4).
+         Video yoksa / oynatılamazsa altındaki CSS 3D sahne görünür.
+         Ücretsiz planda videonun sağ altındaki "Made in Raylight" etiketi
+         Raylight koşulları gereği görünür kalır: video sağ-alta hizalı,
+         o köşe karartılmaz. Etiketsiz dışa aktarım gelince yalnızca dosya değişir. ═══ -->
     <section class="hero" id="hero" aria-label="Lexote tanıtımı">
       <div class="scene" id="scene" aria-hidden="true">
         <div class="floor"></div>
@@ -84,6 +86,9 @@
           </div>
         </div>
       </div>
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="img/hero-poster.webp" aria-hidden="true">
+        <source src="media/lexote-hero.mp4" type="video/mp4" />
+      </video>
       <div class="hero-shade"></div>
 
       <div class="container">
@@ -285,7 +290,7 @@
     document.querySelectorAll('.hero-video, .band video').forEach((video) => {
       const host = video.closest('.hero, .band');
       video.addEventListener('playing', () => host.classList.add('has-video'), { once: true });
-      if (reduced) video.removeAttribute('autoplay');
+      if (reduced) { video.removeAttribute('autoplay'); video.pause(); }
     });
 
     // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
