@@ -4,38 +4,52 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Lexote — Gün saymayı bırakın</title>
-  <meta name="description" content="Lexote, avukatlar için süre ve not takip uygulaması. Tebliğ tarihini girin, son günü Lexote bulsun; süre yaklaşınca hatırlatsın. Yakında App Store ve Google Play'de." />
+  <meta name="description" content="Gün saymayı bırakın. Tebliğ tarihini girin, son günü Lexote bulsun; süre yaklaşınca da ilk o hatırlatsın. Avukatlar için süre ve not takibi." />
   <meta name="author" content="Lexote" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lexote.com.tr/" />
   <meta name="theme-color" content="#0c110f" />
-  <link id="favicon" rel="icon" type="image/svg+xml" href="favicon-active.svg" />
+  <link id="favicon" rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://lexote.com.tr/" />
   <meta property="og:title" content="Lexote — Gün saymayı bırakın" />
-  <meta property="og:description" content="Tebliğ tarihini girin, son günü Lexote bulsun. Siz duruşmadayken o nöbette." />
-  <meta property="og:image" content="https://lexote.com.tr/og-image.png" />
+  <meta property="og:description" content="Tebliğ tarihini girin, son günü Lexote bulsun. Süre yaklaşınca da ilk o hatırlatsın." />
+  <meta property="og:image" content="https://lexote.com.tr/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Lexote — Gün saymayı bırakın." />
   <meta property="og:locale" content="tr_TR" />
   <meta property="og:site_name" content="Lexote" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lexote — Gün saymayı bırakın" />
-  <meta name="twitter:description" content="Tebliğ tarihini girin, son günü Lexote bulsun." />
-  <meta name="twitter:image" content="https://lexote.com.tr/og-image.png" />
+  <meta name="twitter:description" content="Tebliğ tarihini girin, son günü Lexote bulsun. Süre yaklaşınca da ilk o hatırlatsın." />
+  <meta name="twitter:image" content="https://lexote.com.tr/og-image.jpg" />
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Lexote",
+    "url": "https://lexote.com.tr/",
+    "inLanguage": "tr"
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "Lexote",
-    "description": "Avukatlar için süre ve not takip uygulaması.",
-    "url": "https://lexote.com.tr",
+    "description": "Avukatlar için süre ve not takip uygulaması. Tebliğ tarihini girin, son günü Lexote bulsun; süre yaklaşınca da ilk o hatırlatsın.",
+    "url": "https://lexote.com.tr/",
+    "image": "https://lexote.com.tr/icon-512.png",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "iOS, Android",
     "inLanguage": ["tr", "en"],
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TRY" },
-    "author": { "@type": "Organization", "name": "Lexote", "email": "info@lexote.com.tr", "url": "https://lexote.com.tr" }
+    "author": { "@type": "Organization", "name": "Lexote", "email": "info@lexote.com.tr", "url": "https://lexote.com.tr/", "logo": "https://lexote.com.tr/icon-512.png" }
   }
   </script>
 
@@ -236,7 +250,7 @@
     const originalTitle = document.title;
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
-        favicon.href = 'favicon-inactive.svg';
+        favicon.href = '/favicon-96-soluk.png';
         document.title = messages[0];
         messageIndex = 1;
         messageInterval = setInterval(() => {
@@ -244,7 +258,7 @@
           messageIndex = (messageIndex + 1) % messages.length;
         }, 3000);
       } else {
-        favicon.href = 'favicon-active.svg';
+        favicon.href = '/favicon-96.png';
         clearInterval(messageInterval);
         messageIndex = 0;
         document.title = originalTitle;

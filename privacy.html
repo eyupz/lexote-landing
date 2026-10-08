@@ -8,7 +8,8 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lexote.com.tr/privacy.html" />
   <meta name="theme-color" content="#111715" />
-  <link id="favicon" rel="icon" type="image/svg+xml" href="favicon-active.svg" />
+  <link id="favicon" rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="preload" href="fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css?v=20261008l" />
 </head>
@@ -205,7 +206,7 @@
     const originalTitle = document.title;
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
-        favicon.href = 'favicon-inactive.svg';
+        favicon.href = '/favicon-96-soluk.png';
         document.title = messages[0];
         messageIndex = 1;
         messageInterval = setInterval(() => {
@@ -213,7 +214,7 @@
           messageIndex = (messageIndex + 1) % messages.length;
         }, 3000);
       } else {
-        favicon.href = 'favicon-active.svg';
+        favicon.href = '/favicon-96.png';
         clearInterval(messageInterval);
         messageIndex = 0;
         document.title = originalTitle;
