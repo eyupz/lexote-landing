@@ -68,17 +68,18 @@
   </header>
 
   <main>
-    <!-- ═══ Giriş: Raylight videosu tam ekran. Dikey ekranda telefonu ortalayan
-         kırpılmış sürüm (hero-mobile), diğerlerinde hero-1080. Videoda telefon
-         kadrajın %60'ında: masaüstünde yazının sağında kalır. ═══ -->
+    <!-- ═══ Giriş: Raylight videosu (lexote_main, 4K kaynak) tam ekran.
+         Dikey ekran → hero-mobile (karenin %75'i üstte, alt kısım zemine kararır),
+         geniş/yoğun ekran → hero-1440, diğerleri → hero-1080. ═══ -->
     <section class="hero" id="hero" aria-label="Lexote tanıtımı">
       <video class="hero-video" id="heroVideo" muted loop playsinline preload="none" aria-hidden="true"></video>
       <script>
         (function () {
           var v = document.getElementById('heroVideo');
           var portrait = window.matchMedia('(max-aspect-ratio: 4/5)').matches;
-          v.poster = portrait ? 'img/hero-poster-mobile.webp?v=3' : 'img/hero-poster.webp?v=3';
-          v.src = portrait ? 'media/hero-mobile.mp4?v=3' : 'media/hero-1080.mp4?v=3';
+          var px = window.innerWidth * Math.min(window.devicePixelRatio || 1, 2);
+          v.poster = portrait ? 'img/hero-poster-mobile.webp?v=4' : 'img/hero-poster.webp?v=4';
+          v.src = portrait ? 'media/hero-mobile.mp4?v=4' : (px > 2400 ? 'media/hero-1440.mp4?v=4' : 'media/hero-1080.mp4?v=4');
           v.preload = 'auto';
         })();
       </script>
