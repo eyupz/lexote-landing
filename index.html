@@ -40,7 +40,7 @@
   </script>
 
   <script>document.documentElement.classList.add('js')</script>
-  <link rel="stylesheet" href="styles.css?v=20261008d" />
+  <link rel="stylesheet" href="styles.css?v=20261008e" />
 </head>
 <body>
 
@@ -98,7 +98,7 @@
       </div>
     </section>
 
-    <!-- ═══ Ekranlar (kartlara Raylight döngüleri gelince .shot içine video eklenir) ═══ -->
+    <!-- ═══ Ekranlar: Raylight döngüleri (6 sn, dikişsiz). Yalnızca ekranda görünürken oynar. ═══ -->
     <section class="section" id="ekranlar">
       <div class="container">
         <div class="section-head reveal">
@@ -110,15 +110,15 @@
         </div>
         <div class="screens">
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">01</span><div class="tilt"><img src="img/app-sure-hesabi.webp" width="720" height="1564" loading="lazy" alt="Lexote süre hesabı ekranı" /></div></div>
+            <div class="shot"><span class="num">01</span><video class="shot-video" muted loop playsinline preload="none" poster="img/kart-1.webp" aria-label="Süre hesabı ekranı: sonuç kutusu ve süre seçenekleri telefondan öne çıkıyor"><source src="media/kart-1.mp4" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Süre hesabı</h3></figcaption>
           </figure>
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">02</span><div class="tilt"><img src="img/app-ana-ekran-2.webp" width="720" height="1564" loading="lazy" alt="Lexote ana ekranı, renkli notlar" /></div></div>
+            <div class="shot"><span class="num">02</span><video class="shot-video" muted loop playsinline preload="none" poster="img/kart-2.webp" aria-label="Ana ekran: renkli not kartları telefondan öne çıkıyor"><source src="media/kart-2.mp4" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Aciliyet renkleri</h3></figcaption>
           </figure>
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">03</span><div class="tilt"><img src="img/app-filtre.webp" width="720" height="1564" loading="lazy" alt="Lexote süre filtresi" /></div></div>
+            <div class="shot"><span class="num">03</span><video class="shot-video" muted loop playsinline preload="none" poster="img/kart-3.webp" aria-label="Süre filtresi paneli telefondan öne çıkıyor"><source src="media/kart-3.mp4" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Süre filtresi</h3></figcaption>
           </figure>
         </div>
@@ -210,7 +210,6 @@
 
   <script>
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const finePointer = window.matchMedia('(pointer: fine)').matches;
 
     // ── Üst çubuk + menü ──
     const navbar = document.getElementById('navbar');
@@ -255,30 +254,6 @@
       });
     }, { threshold: 0.18 });
     document.querySelectorAll('.reveal, .band').forEach((el) => io.observe(el));
-
-    // ── Ekran kartları: imleci takip eden 3D eğim ──
-    if (finePointer && !reduced) {
-      document.querySelectorAll('.shot').forEach((shot) => {
-        const tilt = shot.querySelector('.tilt');
-        if (!tilt) return;
-        let raf = 0;
-        shot.addEventListener('pointermove', (e) => {
-          if (raf) return;
-          raf = requestAnimationFrame(() => {
-            raf = 0;
-            const r = shot.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width - 0.5;
-            const y = (e.clientY - r.top) / r.height - 0.5;
-            tilt.style.setProperty('--ty', (x * 26).toFixed(2) + 'deg');
-            tilt.style.setProperty('--tx', (-y * 20).toFixed(2) + 'deg');
-          });
-        });
-        shot.addEventListener('pointerleave', () => {
-          tilt.style.removeProperty('--ty');
-          tilt.style.removeProperty('--tx');
-        });
-      });
-    }
 
     // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
     const messages = ['Süreniz dolmadan dönün — Lexote', 'Notlarınız sizi bekliyor — Lexote', 'Son gün yaklaşıyor — Lexote'];
