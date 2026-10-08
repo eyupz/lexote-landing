@@ -40,7 +40,7 @@
   </script>
 
   <script>document.documentElement.classList.add('js')</script>
-  <link rel="stylesheet" href="styles.css?v=20261008e" />
+  <link rel="stylesheet" href="styles.css?v=20261008f" />
 </head>
 <body>
 
@@ -68,8 +68,8 @@
   </header>
 
   <main>
-    <!-- ═══ Giriş: Raylight videosu (lexote_main, 4K kaynak) tam ekran.
-         Dikey ekran → hero-mobile (karenin %75'i üstte, alt kısım zemine kararır),
+    <!-- ═══ Giriş: Raylight videosu ("Ana video (geniş açı)", 4K kaynak) tam ekran.
+         Dikey ekran → hero-mobile (telefon üstte, alt kısım zemine kararır),
          geniş/yoğun ekran → hero-1440, diğerleri → hero-1080. ═══ -->
     <section class="hero" id="hero" aria-label="Lexote tanıtımı">
       <video class="hero-video" id="heroVideo" muted loop playsinline preload="none" aria-hidden="true"></video>
@@ -78,8 +78,8 @@
           var v = document.getElementById('heroVideo');
           var portrait = window.matchMedia('(max-aspect-ratio: 4/5)').matches;
           var px = window.innerWidth * Math.min(window.devicePixelRatio || 1, 2);
-          v.poster = portrait ? 'img/hero-poster-mobile.webp?v=4' : 'img/hero-poster.webp?v=4';
-          v.src = portrait ? 'media/hero-mobile.mp4?v=4' : (px > 2400 ? 'media/hero-1440.mp4?v=4' : 'media/hero-1080.mp4?v=4');
+          v.poster = portrait ? 'img/hero-poster-mobile.webp?v=5' : 'img/hero-poster.webp?v=5';
+          v.src = portrait ? 'media/hero-mobile.mp4?v=5' : (px > 2400 ? 'media/hero-1440.mp4?v=5' : 'media/hero-1080.mp4?v=5');
           v.preload = 'auto';
         })();
       </script>
@@ -125,35 +125,11 @@
       </div>
     </section>
 
-    <!-- ═══ Hatırlatmalar ═══ -->
+    <!-- ═══ Hatırlatmalar: Raylight döngüsü (7,2 sn) — bildirimler 3D olarak kilit ekranına iner ═══ -->
     <section class="band" id="hatirlatma" aria-label="Hatırlatmalar">
-      <div class="band-stage" aria-hidden="true">
-        <div class="lock">
-          <div class="lock-screen">
-            <div class="lock-island"></div>
-            <p class="lock-date">Pazartesi 12 Ekim</p>
-            <p class="lock-time">09:41</p>
-            <div class="notif">
-              <span class="app-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="none" stroke="#C9A84C" stroke-width="1"/><text x="16" y="21.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="16" fill="#C9A84C">L</text></svg></span>
-              <span class="notif-top"><span>LEXOTE</span><span>şimdi</span></span>
-              <span class="notif-title">Yaklaşan süre</span>
-              <span class="notif-body">Yarın doluyor: Ödeme emrine itiraz</span>
-            </div>
-            <div class="notif">
-              <span class="app-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="none" stroke="#C9A84C" stroke-width="1"/><text x="16" y="21.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="16" fill="#C9A84C">L</text></svg></span>
-              <span class="notif-top"><span>LEXOTE</span><span>08:30</span></span>
-              <span class="notif-title">Günlük Özet</span>
-              <span class="notif-body">5 aktif notunuz var. 1 tanesi kritik sürede.</span>
-            </div>
-            <div class="notif">
-              <span class="app-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13" fill="none" stroke="#C9A84C" stroke-width="1"/><text x="16" y="21.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="16" fill="#C9A84C">L</text></svg></span>
-              <span class="notif-top"><span>LEXOTE</span><span>dün</span></span>
-              <span class="notif-title">Süre Uyarısı — Hakem heyeti kararına itiraz</span>
-              <span class="notif-body">Süreye 7 günden az kaldı.</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <video class="band-video" muted loop playsinline preload="none" poster="img/hatirlatma.webp" aria-label="Kilit ekranına Lexote bildirimleri sırayla geliyor">
+        <source src="media/hatirlatma.mp4" type="video/mp4" />
+      </video>
       <div class="band-caption">
         <div class="container">
           <h2>Süre dolmadan <em>haber verir.</em></h2>
@@ -253,7 +229,7 @@
         io.unobserve(e.target);
       });
     }, { threshold: 0.18 });
-    document.querySelectorAll('.reveal, .band').forEach((el) => io.observe(el));
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
     // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
     const messages = ['Süreniz dolmadan dönün — Lexote', 'Notlarınız sizi bekliyor — Lexote', 'Son gün yaklaşıyor — Lexote'];
