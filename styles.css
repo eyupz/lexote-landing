@@ -102,6 +102,7 @@ h1 em, h2 em, h3 em { font-style: italic; color: var(--gold-soft); }
 .btn-ghost:hover { border-color: var(--gold); color: var(--text); }
 .btn .arrow { transition: transform .25s var(--ease); }
 .btn:hover .arrow { transform: translateX(4px); }
+.btn:hover .arrow.down { transform: translateY(3px); }
 
 .stores { display: flex; flex-wrap: wrap; gap: 12px; }
 .store {
