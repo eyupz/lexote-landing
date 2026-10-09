@@ -1,6 +1,6 @@
 # Lexote
 
-> Lexote, Türkiye'de çalışan avukatlar için bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günü kanuna göre hesaplar, kalan süreyi renkle gösterir ve süre dolmadan hatırlatır. iPhone ve Android için; Türkçe ve İngilizce. Şu anda ücretsiz: uygulama içi satın alma, abonelik ve reklam yok. App Store ve Google Play'de yakında.
+> Lexote, Türkiye'de çalışan avukatlar için bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günü kanuna göre hesaplar, kalan süreyi renkle gösterir ve süre dolmadan hatırlatır. Türkçe ve İngilizce. Şu anda ücretsiz: uygulama içi satın alma, abonelik ve reklam yok. iPhone için App Store'da yayında; Android sürümü Google Play'de yakında.
 
 ## Ne yapar
 - Tebliğ tarihinden son gün hesabı; hazır süreler: 1 hafta, 2 hafta, 10, 15, 30, 60 gün, 1 ay. Son gün ve saat takvimden de seçilebilir.
@@ -22,6 +22,7 @@
 - Reklam kimliği kullanılmaz, kullanıcı izlenmez.
 
 ## Sayfalar
+- [App Store: Lexote](https://apps.apple.com/tr/app/lexote/id6779772543): iPhone uygulaması
 - [Ana sayfa](https://lexote.com.tr/): tanıtım ve sık sorulan sorular
 - [Gizlilik Politikası ve KVKK Aydınlatma Metni](https://lexote.com.tr/privacy.html)
 - [Kullanım Koşulları](https://lexote.com.tr/terms.html)
