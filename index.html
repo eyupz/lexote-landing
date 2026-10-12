@@ -89,10 +89,11 @@
           "audienceType": "Avukatlar"
         },
         "featureList": [
-          "Tebliğ tarihinden son gün hesabı (HMK m.92, m.93, m.104; Tebligat Kanunu m.7/a)",
-          "E-tebligat, iş günü ve adli tatil seçenekleri",
+          "Tebliğ tarihine süre ekleyerek son günün tarihi (HMK m.92)",
+          "Tatil, e-tebligat, iş günü ve adli tatil etkisi için bilgi satırları (HMK m.93, m.104; Tebligat Kanunu m.7/a)",
           "Kalan süreye göre renkli aciliyet gösterimi ve süre filtresi",
-          "Süre dolmadan 24 saat önce ve süre dolduğunda bildirim",
+          "Son 24 saatte 24, 12, 6 ve 1 saat kala kritik uyarı ve süre dolduğunda bildirim",
+          "Uygulama içi takvim: her gün süresi dolan notlar",
           "Dosya notları ve sesli not",
           "Hesap açmadan misafir olarak kullanım"
         ],
@@ -115,7 +116,7 @@
             "name": "Lexote nedir?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Lexote, Türkiye'de çalışan avukatlar için hazırlanmış bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günü hesaplar, kalan süreyi renkle gösterir ve süre dolmadan hatırlatır. iPhone ve Android için hazırlanmıştır; Türkçe ve İngilizce kullanılabilir."
+              "text": "Lexote, Türkiye'de çalışan avukatlar için hazırlanmış bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günün tarihini verir, kalan süreyi renkle gösterir ve süre dolmadan hatırlatır. iPhone ve Android için hazırlanmıştır; Türkçe ve İngilizce kullanılabilir."
             }
           },
           {
@@ -123,7 +124,7 @@
             "name": "Son gün nasıl hesaplanıyor?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Gün olarak belirlenen sürelerde tebliğ günü sayılmaz; hafta ve ay olarak belirlenen süreler, son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92). Aradaki resmî tatiller süreye dâhildir; son gün hafta sonuna ya da resmî tatile rastlarsa süre izleyen ilk iş günü biter (HMK m.93). Lexote, son günün bitiş saatini 17:00 olarak alır."
+              "text": "Seçtiğiniz süre tebliğ tarihine takvim üzerinden eklenir: gün olarak belirlenen sürelerde tebliğ günü sayılmaz; hafta ve ay olarak belirlenen süreler, son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92). Örneğin 5 Ekim 2026 Pazartesi tebliğ edilen 1 haftalık sürenin son günü 12 Ekim 2026 Pazartesi'dir. Lexote tarihi kendiliğinden kaydırmaz; son gün hafta sonuna ya da resmî tatile rastlarsa, sürenin bittiği ilk iş günü ayrıca bilgi olarak yazılır (HMK m.93). Son günün saati, notu kaydettiğiniz saattir; hatırlatmalar bu saate göre kurulur."
             }
           },
           {
@@ -131,7 +132,7 @@
             "name": "E-tebligat ve adli tatil hesaba katılıyor mu?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Evet. Elektronik tebligat, muhatabın elektronik adresine ulaştığı tarihi izleyen beşinci günün sonunda yapılmış sayılır (Tebligat Kanunu m.7/a); \"E-tebligat ile geldi\" seçeneği açıldığında süre bu günden başlar. Adli tatile tabi işlerde son gün adli tatile (20 Temmuz–31 Ağustos) rastlarsa süre 7 Eylül'e uzar (HMK m.104)."
+              "text": "Bilgi olarak gösterilir; kaydedilen son gün değişmez. Elektronik tebligat, muhatabın elektronik adresine ulaştığı tarihi izleyen beşinci günün sonunda yapılmış sayılır (Tebligat Kanunu m.7/a); \"E-tebligat ile geldi\" seçeneği açıldığında son günün buna göre hangi tarihe denk geldiği yazılır. Adli tatile tabi işlerde son gün adli tatile (20 Temmuz–31 Ağustos) rastlarsa sürenin 7 Eylül'de bittiği belirtilir (HMK m.104). Kanunda iş günü olarak belirlenen süreler için iş günü karşılığı da gösterilir."
             }
           },
           {
@@ -139,7 +140,7 @@
             "name": "Hangi süreleri seçebilirim?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "1 hafta, 2 hafta, 10, 15, 30 ve 60 gün ile 1 ay hazır seçenek olarak bulunur. Kanunda iş günü olarak belirlenen süreler için ayrı bir seçenek vardır. Dilerseniz son günü ve saati doğrudan takvimden de seçebilirsiniz."
+              "text": "1 hafta, 2 hafta, 10, 15, 30 ve 60 gün ile 1 ay hazır seçenek olarak bulunur. 1 ay takvim ayıdır (15 Ocak + 1 ay = 15 Şubat); 30 gün ise tam 30 gündür (15 Ocak + 30 gün = 14 Şubat). Dilerseniz son günü ve saati doğrudan takvimden de seçebilirsiniz."
             }
           },
           {
@@ -147,7 +148,7 @@
             "name": "Hatırlatmalar ne zaman gelir?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Süre dolmadan 24 saat önce ve süre dolduğunda bildirim gelir. Kayıtlı hesaplarda ayrıca 7 gün kala hatırlatma ve her gün seçtiğiniz saatte aktif notlarınızın özeti gönderilir. Hatırlatmalar telefonunuzda planlanır; uygulama kapalıyken de gelir."
+              "text": "Son 24 saatte 24, 12, 6 ve 1 saat kala kritik uyarı, süre dolduğunda da bildirim gelir; isterseniz son 24 saat için her saat, 2 veya 3 saatte bir ek hatırlatma seçebilirsiniz. Kayıtlı hesaplarda ayrıca 7 gün kala hatırlatma ve her gün seçtiğiniz saatte aktif notlarınızın özeti gönderilir. Bildirimdeki \"Tamamlandı\" düğmesi notu tamamlar, \"Aç\" düğmesi notu açar. Hatırlatmalar telefonunuzda planlanır; uygulama kapalıyken de gelir."
             }
           },
           {
@@ -305,23 +306,23 @@
         <div class="faq-list reveal">
           <details class="faq-item">
             <summary><h3>Lexote nedir?</h3></summary>
-            <p>Lexote, Türkiye'de çalışan avukatlar için hazırlanmış bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günü hesaplar, kalan süreyi renkle gösterir ve süre dolmadan hatırlatır. iPhone ve Android için hazırlanmıştır; Türkçe ve İngilizce kullanılabilir.</p>
+            <p>Lexote, Türkiye'de çalışan avukatlar için hazırlanmış bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günün tarihini verir, kalan süreyi renkle gösterir ve süre dolmadan hatırlatır. iPhone ve Android için hazırlanmıştır; Türkçe ve İngilizce kullanılabilir.</p>
           </details>
           <details class="faq-item">
             <summary><h3>Son gün nasıl hesaplanıyor?</h3></summary>
-            <p>Gün olarak belirlenen sürelerde tebliğ günü sayılmaz; hafta ve ay olarak belirlenen süreler, son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92). Aradaki resmî tatiller süreye dâhildir; son gün hafta sonuna ya da resmî tatile rastlarsa süre izleyen ilk iş günü biter (HMK m.93). Lexote, son günün bitiş saatini 17:00 olarak alır.</p>
+            <p>Seçtiğiniz süre tebliğ tarihine takvim üzerinden eklenir: gün olarak belirlenen sürelerde tebliğ günü sayılmaz; hafta ve ay olarak belirlenen süreler, son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92). Örneğin 5 Ekim 2026 Pazartesi tebliğ edilen 1 haftalık sürenin son günü 12 Ekim 2026 Pazartesi'dir. Lexote tarihi kendiliğinden kaydırmaz; son gün hafta sonuna ya da resmî tatile rastlarsa, sürenin bittiği ilk iş günü ayrıca bilgi olarak yazılır (HMK m.93). Son günün saati, notu kaydettiğiniz saattir; hatırlatmalar bu saate göre kurulur.</p>
           </details>
           <details class="faq-item">
             <summary><h3>E-tebligat ve adli tatil hesaba katılıyor mu?</h3></summary>
-            <p>Evet. Elektronik tebligat, muhatabın elektronik adresine ulaştığı tarihi izleyen beşinci günün sonunda yapılmış sayılır (Tebligat Kanunu m.7/a); "E-tebligat ile geldi" seçeneği açıldığında süre bu günden başlar. Adli tatile tabi işlerde son gün adli tatile (20 Temmuz–31 Ağustos) rastlarsa süre 7 Eylül'e uzar (HMK m.104).</p>
+            <p>Bilgi olarak gösterilir; kaydedilen son gün değişmez. Elektronik tebligat, muhatabın elektronik adresine ulaştığı tarihi izleyen beşinci günün sonunda yapılmış sayılır (Tebligat Kanunu m.7/a); "E-tebligat ile geldi" seçeneği açıldığında son günün buna göre hangi tarihe denk geldiği yazılır. Adli tatile tabi işlerde son gün adli tatile (20 Temmuz–31 Ağustos) rastlarsa sürenin 7 Eylül'de bittiği belirtilir (HMK m.104). Kanunda iş günü olarak belirlenen süreler için iş günü karşılığı da gösterilir.</p>
           </details>
           <details class="faq-item">
             <summary><h3>Hangi süreleri seçebilirim?</h3></summary>
-            <p>1 hafta, 2 hafta, 10, 15, 30 ve 60 gün ile 1 ay hazır seçenek olarak bulunur. Kanunda iş günü olarak belirlenen süreler için ayrı bir seçenek vardır. Dilerseniz son günü ve saati doğrudan takvimden de seçebilirsiniz.</p>
+            <p>1 hafta, 2 hafta, 10, 15, 30 ve 60 gün ile 1 ay hazır seçenek olarak bulunur. 1 ay takvim ayıdır (15 Ocak + 1 ay = 15 Şubat); 30 gün ise tam 30 gündür (15 Ocak + 30 gün = 14 Şubat). Dilerseniz son günü ve saati doğrudan takvimden de seçebilirsiniz.</p>
           </details>
           <details class="faq-item">
             <summary><h3>Hatırlatmalar ne zaman gelir?</h3></summary>
-            <p>Süre dolmadan 24 saat önce ve süre dolduğunda bildirim gelir. Kayıtlı hesaplarda ayrıca 7 gün kala hatırlatma ve her gün seçtiğiniz saatte aktif notlarınızın özeti gönderilir. Hatırlatmalar telefonunuzda planlanır; uygulama kapalıyken de gelir.</p>
+            <p>Son 24 saatte 24, 12, 6 ve 1 saat kala kritik uyarı, süre dolduğunda da bildirim gelir; isterseniz son 24 saat için her saat, 2 veya 3 saatte bir ek hatırlatma seçebilirsiniz. Kayıtlı hesaplarda ayrıca 7 gün kala hatırlatma ve her gün seçtiğiniz saatte aktif notlarınızın özeti gönderilir. Bildirimdeki "Tamamlandı" düğmesi notu tamamlar, "Aç" düğmesi notu açar. Hatırlatmalar telefonunuzda planlanır; uygulama kapalıyken de gelir.</p>
           </details>
           <details class="faq-item">
             <summary><h3>Lexote ücretli mi?</h3></summary>

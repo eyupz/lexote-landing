@@ -1,21 +1,22 @@
 # Lexote
 
-> Lexote, Türkiye'de çalışan avukatlar için bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günü kanuna göre hesaplar, kalan süreyi renkle gösterir ve süre dolmadan hatırlatır. Türkçe ve İngilizce. Şu anda ücretsiz: uygulama içi satın alma, abonelik ve reklam yok. iPhone için App Store'da yayında; Android sürümü Google Play'de yakında.
+> Lexote, Türkiye'de çalışan avukatlar için bir süre ve dosya notu takip uygulamasıdır. Tebliğ tarihini ve süreyi seçtiğinizde son günün tarihini verir; tatil, e-tebligat ve adli tatil etkisini bilgi olarak gösterir, kalan süreyi renkle belirtir ve süre dolmadan hatırlatır. Türkçe ve İngilizce. Şu anda ücretsiz: uygulama içi satın alma, abonelik ve reklam yok. iPhone için App Store'da yayında; Android sürümü Google Play'de yakında.
 
 ## Ne yapar
-- Tebliğ tarihinden son gün hesabı; hazır süreler: 1 hafta, 2 hafta, 10, 15, 30, 60 gün, 1 ay. Son gün ve saat takvimden de seçilebilir.
+- Tebliğ tarihine süre ekleyerek son günün tarihi; hazır süreler: 1 hafta, 2 hafta, 10, 15, 30, 60 gün, 1 ay. Son gün ve saat takvimden de seçilebilir.
 - Kalan süreye göre renkli aciliyet gösterimi (24 saatten az / 1-7 gün / 7 günden fazla) ve süre filtresi.
-- Hatırlatma: süre dolmadan 24 saat önce ve süre dolduğunda; kayıtlı hesaplarda ayrıca 7 gün kala ve günlük özet. Hatırlatmalar telefonda planlanır, uygulama kapalıyken de gelir.
+- Hatırlatma: son 24 saatte 24, 12, 6 ve 1 saat kala kritik uyarı ve süre dolduğunda bildirim; isteğe bağlı olarak son 24 saatte her saat, 2 veya 3 saatte bir ek hatırlatma. Kayıtlı hesaplarda ayrıca 7 gün kala hatırlatma ve günlük özet. Bildirimde "Tamamlandı" ve "Aç" düğmeleri. Hatırlatmalar telefonda planlanır, uygulama kapalıyken de gelir.
+- Uygulama içi takvim: her günde süresi dolan notların aciliyet sayıları; güne dokununca o günün notları.
 - Dosya notları (mahkeme, dosya numarası, açıklama) ve sesli not.
 - Hesap açmadan misafir olarak kullanım; e-postayla kayıt olununca notlar hesaba aktarılır.
 
-## Süre hesabı kuralları
-- Gün olarak belirlenen sürelerde tebliğ günü sayılmaz; hafta ve ay süreleri son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92).
-- Aradaki resmî tatiller süreye dâhildir; son gün hafta sonuna veya resmî tatile rastlarsa süre izleyen ilk iş günü biter (HMK m.93).
-- Elektronik tebligat, elektronik adrese ulaştığı tarihi izleyen beşinci günün sonunda yapılmış sayılır (Tebligat Kanunu m.7/a).
-- Adli tatile tabi işlerde son gün adli tatile (20 Temmuz–31 Ağustos) rastlarsa süre 7 Eylül'e uzar (HMK m.104).
-- Kanunda iş günü olarak belirlenen süreler için ayrı seçenek vardır.
-- Son günün bitiş saati 17:00 olarak alınır. Hesaplar bilgi amaçlıdır; Lexote hukuki danışmanlık vermez.
+## Son gün ve bilgi satırları
+- Seçilen süre tebliğ tarihine takvim üzerinden eklenir: gün olarak belirlenen sürelerde tebliğ günü sayılmaz; hafta ve ay süreleri son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92). 1 ay takvim ayıdır (15 Ocak + 1 ay = 15 Şubat), 30 gün tam 30 gündür (15 Ocak + 30 gün = 14 Şubat).
+- Lexote tarihi kendiliğinden kaydırmaz. Son gün hafta sonuna veya resmî tatile rastlarsa sürenin bittiği ilk iş günü bilgi olarak yazılır (HMK m.93; aradaki tatiller süreye dâhildir).
+- "E-tebligat ile geldi" seçeneği açıkken: elektronik tebligat, elektronik adrese ulaştığı tarihi izleyen beşinci günün sonunda yapılmış sayılır (Tebligat Kanunu m.7/a); son günün buna göre denk geldiği tarih bilgi olarak yazılır.
+- Adli tatile tabi işlerde son gün adli tatile (20 Temmuz–31 Ağustos) rastlarsa sürenin 7 Eylül'de bittiği bilgi olarak yazılır (HMK m.104).
+- Kanunda iş günü olarak belirlenen süreler için iş günü karşılığı da gösterilir.
+- Son günün saati notun kaydedildiği saattir; hatırlatmalar bu saate göre kurulur. Hesaplar bilgi amaçlıdır; Lexote hukuki danışmanlık vermez.
 
 ## Gizlilik
 - Notlar yalnızca kullanıcının hesabıyla erişilebilir, Google Cloud altyapısında şifreli saklanır; veritabanı Frankfurt'ta (Almanya).
