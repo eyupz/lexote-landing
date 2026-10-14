@@ -427,6 +427,20 @@
       });
     }
 
+    // ── Kanal etiketi → App Store kampanya bağlantısı ──
+    // lexote.com.tr/?k=linkedin ile gelen ziyaretçinin App Store düğmesi ct=linkedin taşır;
+    // App Store Connect > Analytics > Campaigns'te indirmeler kanal başına görünür.
+    // Etiketsiz gelen "site" sayılır. Çerez yok, istek yok: yalnızca düğmenin adresi değişir.
+    // pt (sağlayıcı kodu) App Store Connect'in kampanya bağlantısı oluşturucusundan alındı.
+    // Oluşturucunun ülkesiz adresi masaüstünde ABD sayfasına gidiyor; /tr/ aynı etiketlerle
+    // Türkiye sayfasını açıyor (ikisi de .../id6779772543?ct=…&pt=… adresine yönleniyor).
+    const APP_STORE_CAMPAIGN_URL = 'https://apps.apple.com/tr/app/lexote/id6779772543?pt=129032526&mt=8&ct=';
+    const channelTag = (new URLSearchParams(location.search).get('k') || '').toLowerCase();
+    const campaign = /^[a-z0-9-]{1,30}$/.test(channelTag) ? channelTag : 'site';
+    document.querySelectorAll('a[href^="https://apps.apple.com/"]').forEach((a) => {
+      a.href = APP_STORE_CAMPAIGN_URL + campaign;
+    });
+
     const setMenu = (open) => {
       navLinks.classList.toggle('open', open);
       navToggle.classList.toggle('open', open);
