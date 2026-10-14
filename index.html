@@ -409,6 +409,24 @@
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── Bölüm bağlantısıyla açılış (uygulamadaki "Meslektaşınıza önerin": #indir) ──
+    // Tarayıcının kendi kaydırması, yumuşak kaydırma (scroll-behavior: smooth) sayfa
+    // yerleşmeden başladığı için yarıda kalıyor, sayfa en üstte açılıyordu.
+    const hashTarget = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (hashTarget) {
+      const loaded = new Promise((resolve) => {
+        if (document.readyState === 'complete') resolve();
+        else window.addEventListener('load', resolve, { once: true });
+      });
+      Promise.all([loaded, document.fonts ? document.fonts.ready : null]).then(() => {
+        const root = document.documentElement;
+        root.style.scrollBehavior = 'auto';
+        hashTarget.scrollIntoView({ block: 'start' });
+        root.style.scrollBehavior = '';
+      });
+    }
+
     const setMenu = (open) => {
       navLinks.classList.toggle('open', open);
       navToggle.classList.toggle('open', open);
