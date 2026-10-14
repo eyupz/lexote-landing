@@ -5,10 +5,10 @@
 ## Ne yapar
 - Tebliğ tarihine süre ekleyerek son günün tarihi; hazır süreler: 1 hafta, 2 hafta, 10, 15, 30, 60 gün, 1 ay. Son gün ve saat takvimden de seçilebilir.
 - Kalan süreye göre renkli aciliyet gösterimi (24 saatten az / 1-7 gün / 7 günden fazla) ve süre filtresi.
-- Hatırlatma: son 24 saatte 24, 12, 6 ve 1 saat kala kritik uyarı ve süre dolduğunda bildirim; isteğe bağlı olarak son 24 saatte her saat, 2 veya 3 saatte bir ek hatırlatma. Kayıtlı hesaplarda ayrıca 7 gün kala hatırlatma ve günlük özet. Bildirimde "Tamamlandı" ve "Aç" düğmeleri. Hatırlatmalar telefonda planlanır, uygulama kapalıyken de gelir.
+- Hatırlatma: son 24 saatte 24, 12, 6 ve 1 saat kala kritik uyarı ve süre dolduğunda bildirim; isteğe bağlı olarak son 24 saatte her saat, 2 veya 3 saatte bir ek hatırlatma. Ayrıca 7 gün kala hatırlatma ve günlük özet. Bildirime dokununca notun sekmesi açılır; bildirimde "Tamamlandı olarak işaretle" ve "Düzenle" düğmeleri. Hatırlatmalar telefonda planlanır, uygulama kapalıyken de gelir.
 - Uygulama içi takvim: her günde süresi dolan notların aciliyet sayıları; güne dokununca o günün notları.
 - Dosya notları (mahkeme, dosya numarası, açıklama) ve sesli not.
-- Hesap açmadan misafir olarak kullanım; e-postayla kayıt olununca notlar hesaba aktarılır.
+- Hesap açmadan misafir olarak kullanım (tüm özellikler ve bildirimler açık); e-postayla kayıt olununca notlar hesaba aktarılır.
 
 ## Son gün ve bilgi satırları
 - Seçilen süre tebliğ tarihine takvim üzerinden eklenir: gün olarak belirlenen sürelerde tebliğ günü sayılmaz; hafta ve ay süreleri son hafta veya ayda başladığı güne karşılık gelen günde biter (HMK m.92). 1 ay takvim ayıdır (15 Ocak + 1 ay = 15 Şubat), 30 gün tam 30 gündür (15 Ocak + 30 gün = 14 Şubat).
