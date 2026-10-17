@@ -43,7 +43,8 @@
         "sameAs": [
           "https://x.com/lexoteapp",
           "https://www.linkedin.com/company/lexote-app/",
-          "https://apps.apple.com/tr/app/lexote/id6779772543"
+          "https://apps.apple.com/tr/app/lexote/id6779772543",
+          "https://play.google.com/store/apps/details?id=com.lexote.app"
         ],
         "logo": {
           "@type": "ImageObject",
@@ -80,10 +81,14 @@
         "url": "https://lexote.com.tr/",
         "image": "https://lexote.com.tr/icon-512.png",
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "iOS",
-        "installUrl": "https://apps.apple.com/tr/app/lexote/id6779772543",
+        "operatingSystem": "iOS, Android",
+        "installUrl": [
+          "https://apps.apple.com/tr/app/lexote/id6779772543",
+          "https://play.google.com/store/apps/details?id=com.lexote.app"
+        ],
         "sameAs": [
-          "https://apps.apple.com/tr/app/lexote/id6779772543"
+          "https://apps.apple.com/tr/app/lexote/id6779772543",
+          "https://play.google.com/store/apps/details?id=com.lexote.app"
         ],
         "inLanguage": [
           "tr",
@@ -193,7 +198,7 @@
             "name": "Nereden indirebilirim?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Lexote, iPhone için App Store'da ücretsiz olarak indirilebilir. Android sürümü yakında Google Play'de olacak."
+              "text": "Lexote, iPhone için App Store'da ve Android için Google Play'de ücretsiz olarak indirilebilir."
             }
           }
         ]
@@ -347,7 +352,7 @@
           </details>
           <details class="faq-item">
             <summary><h3>Nereden indirebilirim?</h3></summary>
-            <p>Lexote, iPhone için <a href="https://apps.apple.com/tr/app/lexote/id6779772543">App Store'da</a> ücretsiz olarak indirilebilir. Android sürümü yakında Google Play'de olacak.</p>
+            <p>Lexote, iPhone için <a href="https://apps.apple.com/tr/app/lexote/id6779772543">App Store'da</a> ve Android için <a href="https://play.google.com/store/apps/details?id=com.lexote.app">Google Play'de</a> ücretsiz olarak indirilebilir.</p>
           </details>
         </div>
       </div>
@@ -362,10 +367,10 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 1.43c0 1.14-.42 2.2-1.11 2.99-.79.9-2.09 1.6-3.2 1.51-.14-1.1.42-2.26 1.09-3 .77-.85 2.1-1.5 3.22-1.5zM20.5 17.02c-.55 1.27-.82 1.84-1.53 2.96-.99 1.56-2.39 3.5-4.12 3.51-1.54.02-1.94-1-4.03-.99-2.09.01-2.53 1.01-4.07.99-1.73-.02-3.05-1.78-4.04-3.34C-.04 15.9-.3 10.66 1.4 8.03c1.09-1.69 2.81-2.68 4.43-2.68 1.65 0 2.69 1.02 4.06 1.02 1.33 0 2.14-1.02 4.05-1.02 1.44 0 2.97.79 4.06 2.15-3.57 1.96-2.99 7.06 0 9.52z"/></svg>
             <span><small>İndirin</small><strong>App Store</strong></span>
           </a>
-          <span class="store" aria-disabled="true">
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.lexote.app" aria-label="Lexote'yi Google Play'den indirin">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.3c-.3.2-.4.5-.4.9v17.6c0 .4.1.7.4.9l.1.1L13.5 12v-.1L3.7 2.2l-.1.1z" fill="#8CC7B5"/><path d="M17 15.3 13.5 12v-.1L17 8.7l4.2 2.4c1.2.7 1.2 1.8 0 2.5L17 15.3z" fill="#DCC27A"/><path d="M17.1 15.4 13.5 12 3.6 21.8c.4.4 1 .5 1.7.1l11.8-6.5" fill="#C9A84C"/><path d="M17.1 8.6 5.3 2.1c-.7-.4-1.3-.3-1.7.1L13.5 12l3.6-3.4z" fill="#4CAF7D"/></svg>
-            <span><small>Yakında</small><strong>Google Play</strong></span>
-          </span>
+            <span><small>İndirin</small><strong>Google Play</strong></span>
+          </a>
         </div>
         <p class="contact">Sorularınız ve önerileriniz için: <a href="mailto:info@lexote.com.tr?subject=Lexote">info@lexote.com.tr</a></p>
       </div>
@@ -393,6 +398,8 @@
         <div class="footer-col">
           <h2>İletişim</h2>
           <a href="mailto:info@lexote.com.tr">info@lexote.com.tr</a>
+          <a href="https://www.linkedin.com/company/lexote-app/" rel="me">LinkedIn</a>
+          <a href="https://x.com/lexoteapp" rel="me">X</a>
         </div>
       </div>
       <div class="footer-bottom"><span>© 2026 Lexote. Tüm hakları saklıdır.</span><span>Hesaplamalar bilgi amaçlıdır.</span></div>
@@ -444,6 +451,12 @@
     const campaign = /^[a-z0-9-]{1,30}$/.test(channelTag) ? channelTag : 'site';
     document.querySelectorAll('a[href^="https://apps.apple.com/"]').forEach((a) => {
       a.href = APP_STORE_CAMPAIGN_URL + campaign;
+    });
+    // Google Play aynı etiketi referrer içinde UTM olarak alır (Play Console → mağaza girişi
+    // raporları → UTM source). Biçim Google'ın belgesinden: referrer=utm_source%3D…%26utm_campaign%3D…
+    const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.lexote.app';
+    document.querySelectorAll('a[href^="https://play.google.com/"]').forEach((a) => {
+      a.href = PLAY_URL + '&referrer=' + encodeURIComponent('utm_source=' + campaign + '&utm_medium=site&utm_campaign=lexote-site');
     });
 
     const setMenu = (open) => {

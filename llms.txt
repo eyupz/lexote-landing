@@ -24,6 +24,7 @@
 
 ## Sayfalar
 - [App Store: Lexote](https://apps.apple.com/tr/app/lexote/id6779772543): iPhone uygulaması
+- [Google Play: Lexote](https://play.google.com/store/apps/details?id=com.lexote.app): Android uygulaması
 - [Ana sayfa](https://lexote.com.tr/): tanıtım ve sık sorulan sorular
 - [Gizlilik Politikası ve KVKK Aydınlatma Metni](https://lexote.com.tr/privacy.html)
 - [Kullanım Koşulları](https://lexote.com.tr/terms.html)
