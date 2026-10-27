@@ -20,10 +20,11 @@
       var code = p.get('oobCode') || ''
       var key = p.get('apiKey') || ''
       if (p.get('mode') !== 'verifyEmail' || !token.test(code) || !token.test(key)) {
-        location.replace('/')
+        location.replace(location.pathname.indexOf('/en/') === 0 ? '/en/' : '/')
         return
       }
-      window.__lexoteVerify = { code: code, key: key, lang: p.get('lang') === 'en' ? 'en' : 'tr' }
+      var lang = p.get('lang')
+      window.__lexoteVerify = { code: code, key: key, lang: lang === 'en' || (lang !== 'tr' && location.pathname.indexOf('/en/') === 0) ? 'en' : 'tr' }
       history.replaceState(null, '', location.pathname)
     })()
   </script>
@@ -35,6 +36,10 @@
     main { width: 100%; max-width: 440px; padding: 72px 24px 48px; visibility: hidden; }
     main.ready { visibility: visible; }
     .brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 56px; }
+    .language-switch { display: flex; justify-content: flex-end; gap: 4px; margin-bottom: 24px; }
+    .language-switch button { min-width: 44px; min-height: 44px; border: 1px solid #2a3632; border-radius: 8px; background: transparent; color: var(--muted); font: 600 13px system-ui; cursor: pointer; }
+    .language-switch button[aria-pressed="true"] { color: var(--gold); background: var(--card); }
+    .language-switch button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
     .mark { width: 30px; height: 30px; border-radius: 8px; background: var(--card); display: inline-flex; align-items: center; justify-content: center; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; color: var(--gold); }
     .name { font-family: Georgia, 'Times New Roman', serif; font-size: 18px; letter-spacing: 1.5px; }
     .rule { width: 20px; height: 2px; border-radius: 1px; background: var(--gold); margin-bottom: 18px; }
@@ -51,6 +56,10 @@
 </head>
 <body>
   <main id="main" aria-live="polite">
+    <nav class="language-switch" aria-label="Language / Dil">
+      <button type="button" lang="tr" data-verify-language="tr" aria-pressed="true">TR</button>
+      <button type="button" lang="en" data-verify-language="en" aria-pressed="false">EN</button>
+    </nav>
     <div class="brand"><span class="mark" aria-hidden="true">L</span><span class="name">Lexote</span></div>
     <div class="rule" id="rule"></div>
     <h1 id="title"></h1>
@@ -77,9 +86,9 @@
           retry: 'Tekrar dene'
         },
         en: {
-          loadingTitle: 'Verifying your e-mail address',
+          loadingTitle: 'Verifying your email address',
           loadingBody: 'Please wait.',
-          doneTitle: 'Your e-mail address is verified',
+          doneTitle: 'Your email address has been verified',
           doneBody: 'Your account is now active. Return to the Lexote app to start using it.',
           invalidTitle: 'This link is not valid',
           invalidBody: 'This verification link has expired or has already been used. You can request a new link from the verification screen in the app.',
@@ -90,12 +99,29 @@
         }
       }
       var t = COPY[v.lang]
-      document.documentElement.lang = v.lang
       var $ = function (id) { return document.getElementById(id) }
-      $('open').textContent = t.open
-      $('retry').textContent = t.retry
+      var currentState = 'loading'
+
+      function updateLanguage() {
+        t = COPY[v.lang]
+        document.documentElement.lang = v.lang
+        $('open').textContent = t.open
+        $('retry').textContent = t.retry
+        document.querySelectorAll('[data-verify-language]').forEach(function (button) {
+          button.setAttribute('aria-pressed', String(button.getAttribute('data-verify-language') === v.lang))
+        })
+      }
+      document.querySelectorAll('[data-verify-language]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          v.lang = button.getAttribute('data-verify-language')
+          updateLanguage()
+          show(currentState)
+        })
+      })
+      updateLanguage()
 
       function show(state) {
+        currentState = state
         $('title').textContent = t[state + 'Title']
         $('body').textContent = t[state + 'Body']
         $('rule').className = state === 'invalid' || state === 'error' ? 'rule bad' : 'rule'

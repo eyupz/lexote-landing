@@ -90,6 +90,11 @@ h1 em, h2 em, h3 em { font-style: italic; color: var(--gold-soft); }
 .nav-links a:hover { color: var(--text); }
 .nav-links .nav-cta { display: none; }
 .nav-actions { display: flex; align-items: center; gap: 8px; }
+.language-switch { display: inline-flex; align-items: center; flex-shrink: 0; gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg-deep); }
+.language-switch a { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; min-width: 38px; padding: 0 7px; color: var(--text-2); font: 600 12px/1 var(--sans); border-radius: 7px; }
+.language-switch a[aria-current="page"] { background: var(--surface); color: var(--gold-soft); }
+.language-switch a:hover { color: var(--text); }
+@media (max-width: 480px) { .nav-inner { gap: 8px; } .nav-actions { gap: 4px; } }
 .nav-toggle { display: none; width: 44px; height: 44px; background: none; border: 0; cursor: pointer; align-items: center; justify-content: center; flex-direction: column; border-radius: 10px; }
 .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--text); margin: 3.5px 0; transition: transform .3s ease, opacity .3s ease; }
 
@@ -232,6 +237,10 @@ a.store:hover { border-color: var(--gold); color: var(--text); }
 .footer { border-top: 1px solid var(--line-soft); padding: 56px 0 32px; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; }
 .footer-brand p { margin-top: 12px; color: var(--muted); font-size: 14.5px; max-width: 26em; }
+.social-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 20px; }
+.social-links a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 10px; color: var(--text-2); transition: color .2s ease, border-color .2s ease, background .2s ease; }
+.social-links a:hover, .social-links a:focus-visible { color: var(--gold-soft); border-color: var(--gold); background: var(--surface); }
+.social-links svg { width: 21px; height: 21px; }
 .footer-col h2 { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
 .footer-col a { display: flex; align-items: center; min-height: 36px; color: var(--text-2); font-size: 15px; }
 .footer-col a:hover { color: var(--text); }

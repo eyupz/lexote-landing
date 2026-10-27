@@ -9,6 +9,9 @@
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="google-site-verification" content="LUciO7YZEQXBODH_Mvn96i9AMI2t0brXzTjY35y6hWs" />
   <link rel="canonical" href="https://lexote.com.tr/" />
+  <link rel="alternate" hreflang="tr" href="https://lexote.com.tr/" />
+  <link rel="alternate" hreflang="en" href="https://lexote.com.tr/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://lexote.com.tr/" />
   <meta name="apple-itunes-app" content="app-id=6779772543" />
   <meta name="theme-color" content="#0c110f" />
   <link id="favicon" rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
@@ -25,6 +28,7 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Lexote — Gün saymayı bırakın." />
   <meta property="og:locale" content="tr_TR" />
+  <meta property="og:locale:alternate" content="en_GB" />
   <meta property="og:site_name" content="Lexote" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lexote — Gün saymayı bırakın" />
@@ -41,6 +45,7 @@
         "name": "Lexote",
         "url": "https://lexote.com.tr/",
         "sameAs": [
+          "https://www.instagram.com/lexoteapp/",
           "https://x.com/lexoteapp",
           "https://www.linkedin.com/company/lexote-app/",
           "https://apps.apple.com/tr/app/lexote/id6779772543"
@@ -203,7 +208,8 @@
   </script>
 
   <script>document.documentElement.classList.add('js')</script>
-  <link rel="stylesheet" href="styles.css?v=20261009a" />
+  <link rel="stylesheet" href="styles.css?v=20261027-social" />
+  <script src="/language.js?v=20261027-language" defer></script>
 </head>
 <body>
 
@@ -223,6 +229,10 @@
         <a class="nav-cta" href="#indir">İndirin</a>
       </nav>
       <div class="nav-actions">
+        <nav class="language-switch" aria-label="Language / Dil">
+          <a data-language-link href="/" hreflang="tr" lang="tr" aria-current="page" title="Türkçe">TR</a>
+          <a data-language-link href="/en/" hreflang="en" lang="en" title="English">EN</a>
+        </nav>
         <a class="btn btn-ghost" href="#indir">İndirin</a>
         <button class="nav-toggle" id="navToggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="navLinks">
           <span></span><span></span><span></span>
@@ -384,6 +394,17 @@
             <span class="brand-name">Lexote</span>
           </a>
           <p>Gün saymayı bırakan avukatlar için.</p>
+          <nav class="social-links" id="social-links" aria-label="Sosyal medya">
+            <a href="https://www.instagram.com/lexoteapp/" target="_blank" rel="noopener noreferrer" aria-label="Lexote Instagram hesabı (yeni sekmede açılır)" title="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7Z"/><circle cx="12" cy="12" r="3.5"/><path d="M17 7v.01"/></svg>
+            </a>
+            <a href="https://x.com/lexoteapp" target="_blank" rel="noopener noreferrer" aria-label="Lexote X hesabı (yeni sekmede açılır)" title="X">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4l11.733 16h4.267l-11.733-16H4Z"/><path d="M4 20l6.768-6.768m2.46-2.46L20 4"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/lexote-app/" target="_blank" rel="noopener noreferrer" aria-label="Lexote LinkedIn sayfası (yeni sekmede açılır)" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 1 0-4 0"/><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7Z"/></svg>
+            </a>
+          </nav>
         </div>
         <div class="footer-col">
           <h2>Yasal</h2>
