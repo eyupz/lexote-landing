@@ -1,20 +1,20 @@
 {
-  "version": "2026-10-29",
+  "version": "2026-10-29.1",
   "documents": {
     "privacy_tr": {
-      "sha256": "3f1d869e4f02de582edc2e25e894d9fcedfa15fb1a98729784216736da0a65b9",
+      "sha256": "8ead9c0bb81dba384585e21c2f1e22f77947a87a6793329348a23cde4c1a6353",
       "path": "/privacy.html"
     },
     "terms_tr": {
-      "sha256": "322eda0b3d998117467eea4d6cfc651b5fee542934e66a794e412712b11fb37a",
+      "sha256": "ed7139ab7001c268706115a0e91b48555d476e3558384299be536b1b8deedcad",
       "path": "/terms.html"
     },
     "privacy_en": {
-      "sha256": "29cd4a2ab465e5cee8927227d4df06a3683a8170037f605b38147e66ac674e45",
+      "sha256": "43b958202544babb5a6611c7562b044cdf8b71beeb2c163a372deb5a82a080d4",
       "path": "/en/privacy.html"
     },
     "terms_en": {
-      "sha256": "3371765932e5d8ef4ec45e4d18662b090272e7155d398ee7af129a7dce358747",
+      "sha256": "866eb3bdb610ec35e6699aa9bf86ce7c5f44a9f9443c2640e38f504fd9e1e228",
       "path": "/en/terms.html"
     }
   }
