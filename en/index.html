@@ -14,8 +14,8 @@
   <link rel="alternate" hreflang="x-default" href="https://lexote.com.tr/" />
   <meta name="apple-itunes-app" content="app-id=6779772543" />
   <meta name="theme-color" content="#0c110f" />
-  <link id="favicon" rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link id="favicon" rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png?v=r09" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=r09" />
   <link rel="manifest" href="/en/site.webmanifest" />
   <link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin />
 
@@ -23,7 +23,7 @@
   <meta property="og:url" content="https://lexote.com.tr/en/" />
   <meta property="og:title" content="Lexote — Stop counting days" />
   <meta property="og:description" content="Enter the date of service and let Lexote calculate the deadline, then remind you as it approaches." />
-  <meta property="og:image" content="https://lexote.com.tr/og-image.jpg" />
+  <meta property="og:image" content="https://lexote.com.tr/og-image-en.jpg?v=r09" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Lexote — Stop counting days." />
@@ -33,7 +33,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lexote — Stop counting days" />
   <meta name="twitter:description" content="Enter the date of service and let Lexote calculate the deadline, then remind you as it approaches." />
-  <meta name="twitter:image" content="https://lexote.com.tr/og-image.jpg" />
+  <meta name="twitter:image" content="https://lexote.com.tr/og-image-en.jpg?v=r09" />
 
   <script type="application/ld+json">
 {
@@ -211,7 +211,7 @@
   </script>
 
   <script>document.documentElement.classList.add('js')</script>
-  <link rel="stylesheet" href="/styles.css?v=20261027-social" />
+  <link rel="stylesheet" href="/styles.css?v=20261030-brand-r09" />
   <script src="/language.js?v=20261027-language" defer></script>
 </head>
 <body>
@@ -219,11 +219,8 @@
   <header class="navbar" id="navbar">
     <div class="container nav-inner">
       <a class="brand" href="./" aria-label="Lexote home">
-        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
-          <circle cx="16" cy="16" r="15.3" fill="none" stroke="#C9A84C" stroke-width="1"/>
-          <text x="16" y="22.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="18.5" font-weight="400" fill="#C9A84C">L</text>
-        </svg>
-        <span class="brand-name">Lexote</span>
+        <img class="mark" src="/brand/icon.png?v=r09" width="36" height="36" alt="" />
+        <img class="brand-wordmark" src="/brand/wordmark-white.png?v=r09" width="112" height="44" alt="Lexote" />
       </a>
       <nav class="nav-links" id="navLinks" aria-label="On this page">
         <a href="#ekranlar">Screens</a>
@@ -390,11 +387,8 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="brand" href="./">
-            <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
-              <circle cx="16" cy="16" r="15.3" fill="none" stroke="#C9A84C" stroke-width="1"/>
-              <text x="16" y="22.4" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="18.5" font-weight="400" fill="#C9A84C">L</text>
-            </svg>
-            <span class="brand-name">Lexote</span>
+            <img class="mark" src="/brand/icon.png?v=r09" width="36" height="36" alt="" />
+        <img class="brand-wordmark" src="/brand/wordmark-white.png?v=r09" width="112" height="44" alt="Lexote" />
           </a>
           <p>For lawyers who have stopped counting days.</p>
           <nav class="social-links" id="social-links" aria-label="Social media">
@@ -510,7 +504,7 @@
     const originalTitle = document.title;
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
-        favicon.href = '/favicon-96-soluk.png';
+        favicon.href = '/favicon-96-soluk.png?v=r09';
         document.title = messages[0];
         messageIndex = 1;
         messageInterval = setInterval(() => {
@@ -518,7 +512,7 @@
           messageIndex = (messageIndex + 1) % messages.length;
         }, 3000);
       } else {
-        favicon.href = '/favicon-96.png';
+        favicon.href = '/favicon-96.png?v=r09';
         clearInterval(messageInterval);
         messageIndex = 0;
         document.title = originalTitle;

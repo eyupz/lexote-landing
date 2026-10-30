@@ -76,7 +76,18 @@ h1 em, h2 em, h3 em { font-style: italic; color: var(--gold-soft); }
 .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--text); min-height: 44px; }
 .brand:hover { color: var(--text); }
 .brand .mark { width: 30px; height: 30px; flex-shrink: 0; }
-.brand-name { font-family: var(--serif); font-size: 23px; font-weight: 400; line-height: 1; }
+/* Approved R09 lettering. Existing archived legal-page classes use the same
+   artwork without rewriting their immutable document files. */
+.brand .mark { width: 36px; height: 36px; border-radius: 22%; }
+.brand-wordmark { width: 112px; height: 44px; object-fit: contain; }
+.brand-name { display: block; width: 112px; height: 44px; font-size: 0; background: url('/brand/wordmark-white.png?v=r09') center / contain no-repeat; }
+.brand svg.mark { background: url('/brand/icon.png?v=r09') center / contain no-repeat; }
+.brand svg.mark > * { visibility: hidden; }
+@media (max-width: 480px) {
+  .brand { gap: 8px; }
+  .brand .mark { width: 30px; height: 30px; }
+  .brand-wordmark, .brand-name { width: 92px; height: 36px; }
+}
 
 /* ── Üst çubuk ── */
 .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; border-bottom: 1px solid transparent; transition: background .3s ease, border-color .3s ease; }
