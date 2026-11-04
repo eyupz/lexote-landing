@@ -250,16 +250,15 @@
     <!-- ═══ Giriş: Raylight videosu ("Ana video (geniş açı)", 4K kaynak) tam ekran.
          Dikey ekran → hero-mobile (telefon üstte, alt kısım zemine kararır),
          geniş/yoğun ekran → hero-1440, diğerleri → hero-1080. ═══ -->
-    <section class="hero" style="--hero-poster: url(/img/20261103/en/hero-poster.webp); --hero-poster-mobile: url(/img/20261103/en/hero-poster-mobile.webp)" id="hero" aria-label="Introducing Lexote">
+    <section class="hero" id="hero" aria-label="Introducing Lexote">
       <video class="hero-video" id="heroVideo" muted loop playsinline preload="none" aria-hidden="true"></video>
       <script>
         (function () {
           var v = document.getElementById('heroVideo');
           var portrait = window.matchMedia('(max-aspect-ratio: 4/5)').matches;
           var px = window.innerWidth * Math.min(window.devicePixelRatio || 1, 2);
-          v.poster = portrait ? '/img/20261103/en/hero-poster-mobile.webp' : '/img/20261103/en/hero-poster.webp';
-          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-          v.src = portrait ? '/media/20261103/en/hero-mobile.mp4' : (px > 2400 ? '/media/20261103/en/hero-1440.mp4' : '/media/20261103/en/hero-1080.mp4');
+          v.poster = portrait ? '/img/hero-poster-mobile.webp?v=7' : '/img/hero-poster.webp?v=7';
+          v.src = portrait ? '/media/hero-mobile.mp4?v=7' : (px > 2400 ? '/media/hero-1440.mp4?v=7' : '/media/hero-1080.mp4?v=7');
           v.preload = 'auto';
         })();
       </script>
@@ -288,15 +287,15 @@
         </div>
         <div class="screens">
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">01</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/20261103/en/kart-1.webp" aria-label="Deadline calculator: the result panel and time limit options move forward from the phone screen"><source src="/media/20261103/en/kart-1.mp4" type="video/mp4" /></video></div>
+            <div class="shot"><span class="num">01</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/kart-1.webp?v=2" aria-label="Deadline calculator: the result panel and time limit options move forward from the phone screen"><source src="/media/kart-1.mp4?v=2" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Your deadline, in seconds.</h3></figcaption>
           </figure>
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">02</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/20261103/en/kart-2.webp" aria-label="Home screen: colour-coded note cards move forward from the phone screen"><source src="/media/20261103/en/kart-2.mp4" type="video/mp4" /></video></div>
+            <div class="shot"><span class="num">02</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/kart-2.webp?v=2" aria-label="Home screen: colour-coded note cards move forward from the phone screen"><source src="/media/kart-2.mp4?v=2" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Red means time is running out.</h3></figcaption>
           </figure>
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">03</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/20261103/en/kart-3.webp" aria-label="The deadline filter panel moves forward from the phone screen"><source src="/media/20261103/en/kart-3.mp4" type="video/mp4" /></video></div>
+            <div class="shot"><span class="num">03</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/kart-3.webp?v=2" aria-label="The deadline filter panel moves forward from the phone screen"><source src="/media/kart-3.mp4?v=2" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Urgent matters first.</h3></figcaption>
           </figure>
         </div>
@@ -305,8 +304,8 @@
 
     <!-- ═══ Hatırlatmalar: Raylight döngüsü (7,2 sn) — bildirimler 3D olarak kilit ekranına iner ═══ -->
     <section class="band" id="hatirlatma" aria-label="Reminders">
-      <video class="band-video" muted loop playsinline preload="none" poster="/img/20261103/en/hatirlatma.webp" aria-label="Lexote notification and reminder preferences">
-        <source src="/media/20261103/en/hatirlatma.mp4" type="video/mp4" />
+      <video class="band-video" muted loop playsinline preload="none" poster="/img/hatirlatma.webp?v=2" aria-label="Lexote notifications appear one after another on the lock screen">
+        <source src="/media/hatirlatma.mp4?v=2" type="video/mp4" />
       </video>
       <div class="band-caption">
         <div class="container">
@@ -419,7 +418,6 @@
           <a href="mailto:info@lexote.com.tr">info@lexote.com.tr</a>
         </div>
       </div>
-      <p class="container"><a href="/en/guides/">Deadline calculation guides</a></p>
       <div class="footer-bottom"><span>© 2026 Lexote. All rights reserved.</span><span>Calculations are for information only.</span></div>
     </div>
   </footer>

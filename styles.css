@@ -321,10 +321,6 @@ a.store:hover { border-color: var(--gold); color: var(--text); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
   .hero-video { display: none; }
-  .hero { background: var(--bg-deep) var(--hero-poster, url(img/hero-poster.webp?v=6)) center / cover no-repeat; }
+  .hero { background: var(--bg-deep) url(img/hero-poster.webp?v=6) center / cover no-repeat; }
   .js .screen-card.reveal .shot { clip-path: none; }
-}
-
-@media (prefers-reduced-motion: reduce) and (max-aspect-ratio: 4/5) {
-  .hero { background-image: var(--hero-poster-mobile, var(--hero-poster)); background-position: center top; }
 }

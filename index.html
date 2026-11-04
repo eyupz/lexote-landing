@@ -247,16 +247,15 @@
     <!-- ═══ Giriş: Raylight videosu ("Ana video (geniş açı)", 4K kaynak) tam ekran.
          Dikey ekran → hero-mobile (telefon üstte, alt kısım zemine kararır),
          geniş/yoğun ekran → hero-1440, diğerleri → hero-1080. ═══ -->
-    <section class="hero" style="--hero-poster: url(/img/20261103/tr/hero-poster.webp); --hero-poster-mobile: url(/img/20261103/tr/hero-poster-mobile.webp)" id="hero" aria-label="Lexote tanıtımı">
+    <section class="hero" id="hero" aria-label="Lexote tanıtımı">
       <video class="hero-video" id="heroVideo" muted loop playsinline preload="none" aria-hidden="true"></video>
       <script>
         (function () {
           var v = document.getElementById('heroVideo');
           var portrait = window.matchMedia('(max-aspect-ratio: 4/5)').matches;
           var px = window.innerWidth * Math.min(window.devicePixelRatio || 1, 2);
-          v.poster = portrait ? '/img/20261103/tr/hero-poster-mobile.webp' : '/img/20261103/tr/hero-poster.webp';
-          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-          v.src = portrait ? '/media/20261103/tr/hero-mobile.mp4' : (px > 2400 ? '/media/20261103/tr/hero-1440.mp4' : '/media/20261103/tr/hero-1080.mp4');
+          v.poster = portrait ? 'img/hero-poster-mobile.webp?v=7' : 'img/hero-poster.webp?v=7';
+          v.src = portrait ? 'media/hero-mobile.mp4?v=7' : (px > 2400 ? 'media/hero-1440.mp4?v=7' : 'media/hero-1080.mp4?v=7');
           v.preload = 'auto';
         })();
       </script>
@@ -285,15 +284,15 @@
         </div>
         <div class="screens">
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">01</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/20261103/tr/kart-1.webp" aria-label="Süre hesabı ekranı: sonuç kutusu ve süre seçenekleri telefondan öne çıkıyor"><source src="/media/20261103/tr/kart-1.mp4" type="video/mp4" /></video></div>
+            <div class="shot"><span class="num">01</span><video class="shot-video" muted loop playsinline preload="none" poster="img/kart-1.webp?v=2" aria-label="Süre hesabı ekranı: sonuç kutusu ve süre seçenekleri telefondan öne çıkıyor"><source src="media/kart-1.mp4?v=2" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Son gün, saniyesinde.</h3></figcaption>
           </figure>
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">02</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/20261103/tr/kart-2.webp" aria-label="Ana ekran: renkli not kartları telefondan öne çıkıyor"><source src="/media/20261103/tr/kart-2.mp4" type="video/mp4" /></video></div>
+            <div class="shot"><span class="num">02</span><video class="shot-video" muted loop playsinline preload="none" poster="img/kart-2.webp?v=2" aria-label="Ana ekran: renkli not kartları telefondan öne çıkıyor"><source src="media/kart-2.mp4?v=2" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Kırmızı yanıyorsa, vakit dar.</h3></figcaption>
           </figure>
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">03</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/20261103/tr/kart-3.webp" aria-label="Süre filtresi paneli telefondan öne çıkıyor"><source src="/media/20261103/tr/kart-3.mp4" type="video/mp4" /></video></div>
+            <div class="shot"><span class="num">03</span><video class="shot-video" muted loop playsinline preload="none" poster="img/kart-3.webp?v=2" aria-label="Süre filtresi paneli telefondan öne çıkıyor"><source src="media/kart-3.mp4?v=2" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Önce yanan dosyalar.</h3></figcaption>
           </figure>
         </div>
@@ -302,8 +301,8 @@
 
     <!-- ═══ Hatırlatmalar: Raylight döngüsü (7,2 sn) — bildirimler 3D olarak kilit ekranına iner ═══ -->
     <section class="band" id="hatirlatma" aria-label="Hatırlatmalar">
-      <video class="band-video" muted loop playsinline preload="none" poster="/img/20261103/tr/hatirlatma.webp" aria-label="Lexote bildirim ve hatırlatma tercihleri">
-        <source src="/media/20261103/tr/hatirlatma.mp4" type="video/mp4" />
+      <video class="band-video" muted loop playsinline preload="none" poster="img/hatirlatma.webp?v=2" aria-label="Kilit ekranına Lexote bildirimleri sırayla geliyor">
+        <source src="media/hatirlatma.mp4?v=2" type="video/mp4" />
       </video>
       <div class="band-caption">
         <div class="container">
@@ -416,7 +415,6 @@
           <a href="mailto:info@lexote.com.tr">info@lexote.com.tr</a>
         </div>
       </div>
-      <p class="container"><a href="/rehber/">Süre hesabı rehberleri</a></p>
       <div class="footer-bottom"><span>© 2026 Lexote. Tüm hakları saklıdır.</span><span>Hesaplamalar bilgi amaçlıdır.</span></div>
     </div>
   </footer>
