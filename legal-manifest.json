@@ -1,8 +1,9 @@
 {
-  "version": "2026-10-29.1",
+  "version": "2026-11-03.1",
+  "requiresOpenEvidence": true,
   "documents": {
     "privacy_tr": {
-      "sha256": "8ead9c0bb81dba384585e21c2f1e22f77947a87a6793329348a23cde4c1a6353",
+      "sha256": "2b6681fd74ea4b93837f8d8c2b9689109f2f9e2c3c037ea311e103f472f0b869",
       "path": "/privacy.html"
     },
     "terms_tr": {
@@ -10,7 +11,7 @@
       "path": "/terms.html"
     },
     "privacy_en": {
-      "sha256": "43b958202544babb5a6611c7562b044cdf8b71beeb2c163a372deb5a82a080d4",
+      "sha256": "7fdf669101cbecdc91534e588dbd045e5d8e7764c48b2bd7737e6946b1871ddf",
       "path": "/en/privacy.html"
     },
     "terms_en": {

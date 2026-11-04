@@ -103,7 +103,7 @@
       },
       "featureList": [
         "Calculate a due date from the date of service and a time limit (HMK, Article 92)",
-        "Information on holidays, electronic service, working days and the judicial recess (HMK, Articles 93 and 104; Turkish Notification Law, Article 7/a)",
+        "Deadline calculation and procedure-specific holiday information",
         "Colour-coded urgency indicators and deadline filters",
         "Critical reminders 24, 12, 6 and 1 hour before a deadline, and a notification when it expires",
         "An in-app calendar showing notes due each day",
@@ -137,7 +137,7 @@
           "name": "How is the deadline calculated?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The selected time limit is added to the date of service using calendar calculations. For time limits expressed in days, the day of service is not counted. Time limits expressed in weeks or months end on the corresponding day of the final week or month (Article 92 of the Turkish Code of Civil Procedure, HMK). For example, a one-week time limit served on Monday 5 October 2026 ends on Monday 12 October 2026. Lexote does not automatically move the saved date. If the final day falls on a weekend or public holiday, the first subsequent working day is shown separately for information (HMK, Article 93). The deadline time is the time at which you save the note; reminders are scheduled using that time."
+            "text": "The selected time limit is added to the date of service using calendar calculations. For time limits expressed in days, the day of service is not counted. Time limits expressed in weeks or months end on the corresponding day of the final week or month (Article 92 of the Turkish Code of Civil Procedure, HMK). For example, a one-week time limit served on Monday 5 October 2026 ends on Monday 12 October 2026. Lexote does not automatically move the saved date. If the final day falls on a weekend or public holiday, the first subsequent working day is shown separately for information (HMK, Article 93). You can choose the reminder time; otherwise, the time at which you save the note is used. This is a personal reminder time, not the legal filing cut-off."
           }
         },
         {
@@ -145,7 +145,7 @@
           "name": "Are electronic service and the judicial recess taken into account?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "They are shown for information; the saved deadline does not change. Electronic service is deemed completed at the end of the fifth day following the date on which it reaches the recipient’s electronic address (Turkish Notification Law, Article 7/a). When you enable the electronic service option, the corresponding deadline is displayed. For matters subject to the judicial recess, if the deadline falls during the recess (20 July–31 August), the app indicates that the time limit ends on 7 September (HMK, Article 104). A working-day calculation is also shown for time limits that legislation specifies in working days."
+            "text": "Electronic service is deemed completed at the end of the fifth calendar day after receipt in UETS (Turkish Notification Law, Article 7/a). With electronic service enabled in the upcoming app update, Lexote first determines this deemed service date and then adds the selected time limit. For example, receipt on 29 January 2026 followed by a one-month time limit gives 3 March 2026, before any holiday adjustment. Working-day and judicial recess alternatives are shown separately and do not automatically change the saved date. Judicial recess rules depend on the selected procedure (HMK, İYUK or CMK), the nature of the matter and applicable exceptions."
           }
         },
         {
@@ -161,7 +161,7 @@
           "name": "When will I receive reminders?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You receive critical reminders 24, 12, 6 and 1 hour before the deadline, followed by a notification when it expires. During the final 24 hours, you can also choose extra reminders every 1, 2 or 3 hours. There is also a reminder 7 days before the deadline and a daily summary of your active notes at your chosen time. Tapping a notification opens the tab containing the note. The “Mark as completed” action completes the note, while “Edit” opens its editing screen. Reminders are scheduled on your phone and can arrive even when the app is closed."
+            "text": "You receive critical reminders 24, 12, 6 and 1 hour before the deadline, followed by a notification when it expires. During the final 24 hours, you can also choose extra reminders every 1, 2 or 3 hours. There is also a reminder 7 days before the deadline and a daily summary of your active notes at your chosen time. Tapping a notification opens the tab containing the note. The “Mark as completed” action completes the note, while “Edit” opens its editing screen. Reminders are scheduled on your phone and can appear when the app is closed. Device permissions, battery restrictions and operating-system settings may delay or prevent delivery."
           }
         },
         {
@@ -245,15 +245,16 @@
     <!-- ═══ Giriş: Raylight videosu ("Ana video (geniş açı)", 4K kaynak) tam ekran.
          Dikey ekran → hero-mobile (telefon üstte, alt kısım zemine kararır),
          geniş/yoğun ekran → hero-1440, diğerleri → hero-1080. ═══ -->
-    <section class="hero" id="hero" aria-label="Introducing Lexote">
+    <section class="hero" style="--hero-poster: url(/img/20261103/en/hero-poster.webp); --hero-poster-mobile: url(/img/20261103/en/hero-poster-mobile.webp)" id="hero" aria-label="Introducing Lexote">
       <video class="hero-video" id="heroVideo" muted loop playsinline preload="none" aria-hidden="true"></video>
       <script>
         (function () {
           var v = document.getElementById('heroVideo');
           var portrait = window.matchMedia('(max-aspect-ratio: 4/5)').matches;
           var px = window.innerWidth * Math.min(window.devicePixelRatio || 1, 2);
-          v.poster = portrait ? '/img/hero-poster-mobile.webp?v=7' : '/img/hero-poster.webp?v=7';
-          v.src = portrait ? '/media/hero-mobile.mp4?v=7' : (px > 2400 ? '/media/hero-1440.mp4?v=7' : '/media/hero-1080.mp4?v=7');
+          v.poster = portrait ? '/img/20261103/en/hero-poster-mobile.webp' : '/img/20261103/en/hero-poster.webp';
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          v.src = portrait ? '/media/20261103/en/hero-mobile.mp4' : (px > 2400 ? '/media/20261103/en/hero-1440.mp4' : '/media/20261103/en/hero-1080.mp4');
           v.preload = 'auto';
         })();
       </script>
@@ -282,15 +283,15 @@
         </div>
         <div class="screens">
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">01</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/kart-1.webp?v=2" aria-label="Deadline calculator: the result panel and time limit options move forward from the phone screen"><source src="/media/kart-1.mp4?v=2" type="video/mp4" /></video></div>
+            <div class="shot"><span class="num">01</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/20261103/en/kart-1.webp" aria-label="Deadline calculator: the result panel and time limit options move forward from the phone screen"><source src="/media/20261103/en/kart-1.mp4" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Your deadline, in seconds.</h3></figcaption>
           </figure>
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">02</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/kart-2.webp?v=2" aria-label="Home screen: colour-coded note cards move forward from the phone screen"><source src="/media/kart-2.mp4?v=2" type="video/mp4" /></video></div>
+            <div class="shot"><span class="num">02</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/20261103/en/kart-2.webp" aria-label="Home screen: colour-coded note cards move forward from the phone screen"><source src="/media/20261103/en/kart-2.mp4" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Red means time is running out.</h3></figcaption>
           </figure>
           <figure class="screen-card reveal">
-            <div class="shot"><span class="num">03</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/kart-3.webp?v=2" aria-label="The deadline filter panel moves forward from the phone screen"><source src="/media/kart-3.mp4?v=2" type="video/mp4" /></video></div>
+            <div class="shot"><span class="num">03</span><video class="shot-video" muted loop playsinline preload="none" poster="/img/20261103/en/kart-3.webp" aria-label="The deadline filter panel moves forward from the phone screen"><source src="/media/20261103/en/kart-3.mp4" type="video/mp4" /></video></div>
             <figcaption class="screen-label"><h3>Urgent matters first.</h3></figcaption>
           </figure>
         </div>
@@ -299,8 +300,8 @@
 
     <!-- ═══ Hatırlatmalar: Raylight döngüsü (7,2 sn) — bildirimler 3D olarak kilit ekranına iner ═══ -->
     <section class="band" id="hatirlatma" aria-label="Reminders">
-      <video class="band-video" muted loop playsinline preload="none" poster="/img/hatirlatma.webp?v=2" aria-label="Lexote notifications appear one after another on the lock screen">
-        <source src="/media/hatirlatma.mp4?v=2" type="video/mp4" />
+      <video class="band-video" muted loop playsinline preload="none" poster="/img/20261103/en/hatirlatma.webp" aria-label="Lexote notification and reminder preferences">
+        <source src="/media/20261103/en/hatirlatma.mp4" type="video/mp4" />
       </video>
       <div class="band-caption">
         <div class="container">
@@ -325,11 +326,11 @@
           </details>
           <details class="faq-item">
             <summary><h3>How is the deadline calculated?</h3></summary>
-            <p>The selected time limit is added to the date of service using calendar calculations. For time limits expressed in days, the day of service is not counted. Time limits expressed in weeks or months end on the corresponding day of the final week or month (Article 92 of the Turkish Code of Civil Procedure, HMK). For example, a one-week time limit served on Monday 5 October 2026 ends on Monday 12 October 2026. Lexote does not automatically move the saved date. If the final day falls on a weekend or public holiday, the first subsequent working day is shown separately for information (HMK, Article 93). The deadline time is the time at which you save the note; reminders are scheduled using that time.</p>
+            <p>The selected time limit is added to the date of service using calendar calculations. For time limits expressed in days, the day of service is not counted. Time limits expressed in weeks or months end on the corresponding day of the final week or month (Article 92 of the Turkish Code of Civil Procedure, HMK). For example, a one-week time limit served on Monday 5 October 2026 ends on Monday 12 October 2026. Lexote does not automatically move the saved date. If the final day falls on a weekend or public holiday, the first subsequent working day is shown separately for information (HMK, Article 93). You can choose the reminder time; otherwise, the time at which you save the note is used. This is a personal reminder time, not the legal filing cut-off.</p>
           </details>
           <details class="faq-item">
             <summary><h3>Are electronic service and the judicial recess taken into account?</h3></summary>
-            <p>They are shown for information; the saved deadline does not change. Electronic service is deemed completed at the end of the fifth day following the date on which it reaches the recipient’s electronic address (Turkish Notification Law, Article 7/a). When you enable the electronic service option, the corresponding deadline is displayed. For matters subject to the judicial recess, if the deadline falls during the recess (20 July–31 August), the app indicates that the time limit ends on 7 September (HMK, Article 104). A working-day calculation is also shown for time limits that legislation specifies in working days.</p>
+            <p>Electronic service is deemed completed at the end of the fifth calendar day after receipt in UETS (Turkish Notification Law, Article 7/a). With electronic service enabled in the upcoming app update, Lexote first determines this deemed service date and then adds the selected time limit. For example, receipt on 29 January 2026 followed by a one-month time limit gives 3 March 2026, before any holiday adjustment. Working-day and judicial recess alternatives are shown separately and do not automatically change the saved date. Judicial recess rules depend on the selected procedure (HMK, İYUK or CMK), the nature of the matter and applicable exceptions.</p>
           </details>
           <details class="faq-item">
             <summary><h3>Which time limits can I select?</h3></summary>
@@ -337,7 +338,7 @@
           </details>
           <details class="faq-item">
             <summary><h3>When will I receive reminders?</h3></summary>
-            <p>You receive critical reminders 24, 12, 6 and 1 hour before the deadline, followed by a notification when it expires. During the final 24 hours, you can also choose extra reminders every 1, 2 or 3 hours. There is also a reminder 7 days before the deadline and a daily summary of your active notes at your chosen time. Tapping a notification opens the tab containing the note. The “Mark as completed” action completes the note, while “Edit” opens its editing screen. Reminders are scheduled on your phone and can arrive even when the app is closed.</p>
+            <p>You receive critical reminders 24, 12, 6 and 1 hour before the deadline, followed by a notification when it expires. During the final 24 hours, you can also choose extra reminders every 1, 2 or 3 hours. There is also a reminder 7 days before the deadline and a daily summary of your active notes at your chosen time. Tapping a notification opens the tab containing the note. The “Mark as completed” action completes the note, while “Edit” opens its editing screen. Reminders are scheduled on your phone and can appear when the app is closed. Device permissions, battery restrictions and operating-system settings may delay or prevent delivery.</p>
           </details>
           <details class="faq-item">
             <summary><h3>Does Lexote cost anything?</h3></summary>
@@ -413,6 +414,7 @@
           <a href="mailto:info@lexote.com.tr">info@lexote.com.tr</a>
         </div>
       </div>
+      <p class="container"><a href="/en/guides/">Deadline calculation guides</a></p>
       <div class="footer-bottom"><span>© 2026 Lexote. All rights reserved.</span><span>Calculations are for information only.</span></div>
     </div>
   </footer>
@@ -496,28 +498,7 @@
     }, { threshold: 0.18 });
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-    // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
-    const messages = ['Still counting days? — Lexote', 'Your cases are waiting — Lexote', 'Stay ahead of your deadlines — Lexote'];
-    let messageIndex = 0;
-    let messageInterval = null;
-    const favicon = document.getElementById('favicon');
-    const originalTitle = document.title;
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        favicon.href = '/favicon-96-soluk.png?v=r09';
-        document.title = messages[0];
-        messageIndex = 1;
-        messageInterval = setInterval(() => {
-          document.title = messages[messageIndex];
-          messageIndex = (messageIndex + 1) % messages.length;
-        }, 3000);
-      } else {
-        favicon.href = '/favicon-96.png?v=r09';
-        clearInterval(messageInterval);
-        messageIndex = 0;
-        document.title = originalTitle;
-      }
-    });
+    // Keep the canonical page title and approved favicon stable in background tabs.
   </script>
 </body>
 </html>

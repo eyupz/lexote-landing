@@ -47,12 +47,12 @@
   <section class="doc-hero">
     <div class="container">
       <h1>Gizlilik Politikası &amp; KVKK</h1>
-      <p class="updated">Son güncelleme: 29 Ekim 2026 · Sürüm 2026-10-29.1</p>
+      <p class="updated">Son güncelleme: 3 Kasım 2026 · Sürüm 2026-11-03.1</p>
     </div>
   </section>
 
   <!-- ═══ İçerik ═══ -->
-  <main class="doc" data-legal-version="2026-10-29.1">
+  <main class="doc" data-legal-version="2026-11-03.1">
     <div class="container">
       <div class="doc-body">
         <p>Gizlilik Politikası ve KVKK Aydınlatma Metni</p>
@@ -128,6 +128,7 @@
         <h2>9. İzinler ve Bildirimler</h2>
         <p>Uygulama yalnızca sesli not oluşturmak için mikrofon iznini, hatırlatmalar için bildirim iznini ve yalnızca Ayarlar&#x27;da &quot;Notları telefon takvimine ekle&quot; seçeneğini açarsanız takvim iznini ister. Bu izinler isteğe bağlıdır; izinleri vermemek Uygulamanın temel not alma ve süre görüntüleme işlevlerine erişiminizi engellemez. İzinleri reddedebilir, cihaz ayarlarından sonradan dilediğiniz zaman değiştirebilir veya geri alabilirsiniz. Hatırlatmalar ağırlıklı olarak cihazınızda planlanır. İşletim sistemi kısıtlamaları, ağ bağlantı sorunları, pil tasarrufu ayarları, arka plan çalışma kısıtlamaları veya izin verilmemesi halinde bildirimlerin zamanında ulaşması ya da hiç ulaşmaması söz konusu olabilir; bildirimlerin kesintisiz ve zamanında teslimi garanti edilemez.</p>
         <p>Telefon takvimi: Bu seçeneği açarsanız aktif notlarınızın adı, son günü, mahkeme/kurum bilgisi ve dosya numarası telefonunuzun takvimine etkinlik olarak yazılır. Nasıl görüneceğini siz seçersiniz: &quot;Normal etkinlik gibi&quot; seçerseniz telefonunuzun varsayılan takvimine, &quot;Lexote etiketiyle&quot; seçerseniz Lexote&#x27;nin telefonunuzda oluşturduğu ayrı, altın renkli &quot;Lexote&quot; takvimine eklenir. Bu bilgiler bu işlem için tarafımıza gönderilmez. Uygulama takviminizdeki etkinlikleri yalnızca kendi eklediklerini tanımak için okur ve yalnızca kendi eklediği etkinlikleri değiştirir veya siler; diğer etkinliklerinize dokunmaz. Takviminiz iCloud, Google gibi bir hesapla eşitleniyorsa bu etkinlikler o hesaba da aktarılır; takviminizi paylaştığınız kişiler ve takviminize erişim izni verdiğiniz başka uygulamalar da bu etkinlikleri görebilir. Seçeneği kapattığınızda ya da oturumu kapattığınızda Lexote&#x27;nin eklediği etkinlikler (ayrı takvimi seçtiyseniz &quot;Lexote&quot; takvimi) telefonunuzdan kaldırılır.</p>
+        <p>Davalar özelliği başlangıçta kapalıdır. Bu cihazda özelliği açmanız, kaynak takvimleri seçmeniz, takvim erişim izni vermeniz ve aktarım bilgilendirmesini onaylamanız hâlinde seçtiğiniz duruşmaların başlığı, tarihi/saati, mahkeme ve dosya numarası ile etkinlik açıklamasındaki taraf ve not bilgileri Lexote hesabınıza aktarılır. Yalnızca seçilen takvimler ve gösterilen tarih aralığı okunur; kaynak etkinlikler değiştirilmez. Aktarılan kayıtlar, bu metnin 4. ve 6. maddelerindeki müvekkil verileri, meslek sırrı ve yurt dışı aktarım şartları kapsamında, hesabınıza bağlı diğer cihazlardan da görüntülenebilir. Kaynak takvim eşitlemesi açık olan kaynak cihaz uygulamaya döndüğünde yapılır; anlık arka plan eşitlemesi taahhüt edilmez. Takvim erişimini geri alabilir veya özelliği kapatabilirsiniz; bu cihazdaki okuma/eşitleme ve duruşma hatırlatmaları durur. Kapatma daha önce hesabınıza aktarılan kayıtları silmez; bu kayıtlar hesap silme sürecinde silinir ve kişisel verilerinize ilişkin haklarınız kapsamındadır. Duruşma hatırlatmaları ayrıca etkinleştirilir ve bu maddedeki bildirim sınırlamalarına tabidir.</p>
         <h2>10. Çerezler</h2>
         <p>Mobil uygulama çerez kullanmaz. lexote.com.tr yalnızca sayfanın görüntülenmesi ve temel işlevlerinin çalışması için kesinlikle gerekli teknik istekleri yapar (KVKK m.5/2-f kapsamında meşru menfaat); açık rıza gerektiren işlevsel, performans-analitik, takip, profilleme veya reklam çerezi kullanılmaz.</p>
         <h2>11. Çocukların Verileri</h2>
@@ -206,33 +207,7 @@
       navToggle.setAttribute('aria-expanded', String(open));
     });
 
-    // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
-    const messages = [
-      'Davalarınız bekliyor — Lexote',
-      'Notlarınız sizi bekliyor — Lexote',
-      'Süreniz dolmadan dönün — Lexote',
-      'Hukuki süreciniz devam ediyor — Lexote'
-    ];
-    let messageIndex = 0;
-    let messageInterval = null;
-    const favicon = document.getElementById('favicon');
-    const originalTitle = document.title;
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        favicon.href = '/favicon-96-soluk.png?v=r09';
-        document.title = messages[0];
-        messageIndex = 1;
-        messageInterval = setInterval(() => {
-          document.title = messages[messageIndex];
-          messageIndex = (messageIndex + 1) % messages.length;
-        }, 3000);
-      } else {
-        favicon.href = '/favicon-96.png?v=r09';
-        clearInterval(messageInterval);
-        messageIndex = 0;
-        document.title = originalTitle;
-      }
-    });
+    // Keep the canonical page title and approved favicon stable in background tabs.
   </script>
 </body>
 </html>

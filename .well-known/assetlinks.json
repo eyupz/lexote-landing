@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.lexote.app",
+      "sha256_cert_fingerprints": ["AC:AB:CD:68:83:0A:81:A0:53:9F:26:77:61:D8:2D:2F:51:8C:64:2B:B3:C7:19:FD:22:F9:DC:D8:97:4B:08:80"]
+    }
+  }
+]

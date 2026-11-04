@@ -2,26 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lexote.com.tr/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://lexote.com.tr/privacy.html</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://lexote.com.tr/terms.html</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://lexote.com.tr/en/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://lexote.com.tr/en/privacy.html</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
   <url>
     <loc>https://lexote.com.tr/en/terms.html</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-11-03</lastmod>
   </url>
+  <url><loc>https://lexote.com.tr/rehber/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lexote.com.tr/rehber/e-tebligat.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lexote.com.tr/rehber/bir-ay-30-gun.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lexote.com.tr/en/guides/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lexote.com.tr/en/guides/electronic-service.html</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://lexote.com.tr/en/guides/one-month-30-days.html</loc><lastmod>2026-11-03</lastmod></url>
 </urlset>

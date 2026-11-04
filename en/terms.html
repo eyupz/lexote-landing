@@ -47,12 +47,12 @@
   <section class="doc-hero">
     <div class="container">
       <h1>Terms of Use</h1>
-      <p class="updated">Last updated: 29 October 2026 · Version 2026-10-29.1</p>
+      <p class="updated">Last updated: 3 November 2026 · Version 2026-11-03.1</p>
     </div>
   </section>
 
   <!-- ═══ İçerik ═══ -->
-  <main class="doc" data-legal-version="2026-10-29.1">
+  <main class="doc" data-legal-version="2026-11-03.1">
     <div class="container">
       <div class="doc-body">
         <p>Mobile Application Terms of Use (Software and Digital Services Agreement)</p>
@@ -163,33 +163,7 @@
       navToggle.setAttribute('aria-expanded', String(open));
     });
 
-    // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
-    const messages = [
-      'Your cases are waiting — Lexote',
-      'Your notes are waiting — Lexote',
-      'Return before your deadline — Lexote',
-      'Your legal work continues — Lexote'
-    ];
-    let messageIndex = 0;
-    let messageInterval = null;
-    const favicon = document.getElementById('favicon');
-    const originalTitle = document.title;
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        favicon.href = '/favicon-96-soluk.png?v=r09';
-        document.title = messages[0];
-        messageIndex = 1;
-        messageInterval = setInterval(() => {
-          document.title = messages[messageIndex];
-          messageIndex = (messageIndex + 1) % messages.length;
-        }, 3000);
-      } else {
-        favicon.href = '/favicon-96.png?v=r09';
-        clearInterval(messageInterval);
-        messageIndex = 0;
-        document.title = originalTitle;
-      }
-    });
+    // Keep the canonical page title and approved favicon stable in background tabs.
   </script>
 </body>
 </html>

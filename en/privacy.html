@@ -47,12 +47,12 @@
   <section class="doc-hero">
     <div class="container">
       <h1>Privacy Policy &amp; KVKK</h1>
-      <p class="updated">Last updated: 29 October 2026 · Version 2026-10-29.1</p>
+      <p class="updated">Last updated: 3 November 2026 · Version 2026-11-03.1</p>
     </div>
   </section>
 
   <!-- ═══ İçerik ═══ -->
-  <main class="doc" data-legal-version="2026-10-29.1">
+  <main class="doc" data-legal-version="2026-11-03.1">
     <div class="container">
       <div class="doc-body">
         <p>Privacy Policy and KVKK Information Notice</p>
@@ -122,6 +122,7 @@
         <h2>9. Permissions and Notifications</h2>
         <p>The Application requests microphone access only for voice notes, notification permission for reminders, and calendar permission only if you enable “Add notes to phone calendar” in Settings. Permissions are optional: refusing them does not prevent basic note-taking or viewing deadlines. You may deny, change or withdraw them in device settings at any time. Reminders are primarily scheduled on your device. Operating-system restrictions, network problems, battery-saving settings, background restrictions or missing permissions may cause delayed or undelivered notifications. Uninterrupted and timely delivery cannot be guaranteed.</p>
         <p>Phone calendar: If enabled, active note titles, final dates, court/institution details and file numbers are written as events to your phone’s calendar. Choose their appearance: “Like regular events” uses your default calendar; “With a Lexote label” uses a separate gold-coloured “Lexote” calendar created on the phone. This operation does not send that information to us. The Application reads calendar events only to recognise its own entries and changes/deletes only those entries, leaving others untouched. If your calendar syncs with an account such as iCloud or Google, events are also transferred there; people with whom you share the calendar and other apps with calendar access may see them. Turning the option off or signing out removes Lexote-created events from the phone, or the separate Lexote calendar if selected.</p>
+        <p>Cases is disabled by default. If you enable it on this device, select source calendars, grant calendar access and confirm the upload notice, the selected hearings’ titles, dates/times, court names, case numbers and party/note details in event descriptions are uploaded to your Lexote account. Only selected calendars within the displayed date range are read; source events are not modified. Imported records can be viewed on other devices linked to your account, subject to the client-data, professional-confidentiality and international-transfer conditions in sections 4 and 6 of this notice. Source calendars sync when you return to the app on the connected source device; instant background sync is not promised. You can revoke calendar access or disable the feature, stopping reading, syncing and hearing reminders on this device. Disabling does not delete records already uploaded to your account; they are deleted through the account-deletion process and remain subject to your personal-data rights. Hearing reminders must be enabled separately and are subject to the notification limitations in this section.</p>
         <h2>10. Cookies</h2>
         <p>The mobile Application does not use cookies. lexote.com.tr makes only strictly necessary technical requests to display pages and run basic functions (legitimate interest under KVKK Article 5(2)(f)). It uses no functional, performance/analytical, tracking, profiling or advertising cookies requiring explicit consent.</p>
         <h2>11. Children’s Data</h2>
@@ -200,33 +201,7 @@
       navToggle.setAttribute('aria-expanded', String(open));
     });
 
-    // ── Sekme animasyonu: sayfa arka plandayken favicon soluklaşır + başlık döner ──
-    const messages = [
-      'Your cases are waiting — Lexote',
-      'Your notes are waiting — Lexote',
-      'Return before your deadline — Lexote',
-      'Your legal work continues — Lexote'
-    ];
-    let messageIndex = 0;
-    let messageInterval = null;
-    const favicon = document.getElementById('favicon');
-    const originalTitle = document.title;
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        favicon.href = '/favicon-96-soluk.png?v=r09';
-        document.title = messages[0];
-        messageIndex = 1;
-        messageInterval = setInterval(() => {
-          document.title = messages[messageIndex];
-          messageIndex = (messageIndex + 1) % messages.length;
-        }, 3000);
-      } else {
-        favicon.href = '/favicon-96.png?v=r09';
-        clearInterval(messageInterval);
-        messageIndex = 0;
-        document.title = originalTitle;
-      }
-    });
+    // Keep the canonical page title and approved favicon stable in background tabs.
   </script>
 </body>
 </html>

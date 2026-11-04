@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Notu Lexote’de aç</title>
+  <link rel="icon" href="/favicon-96.png?v=r09" type="image/png">
+  <style>
+    :root{color-scheme:light dark;font-family:system-ui,sans-serif;background:#111715;color:#f7f5ef}
+    body{margin:0;min-height:100svh;display:grid;place-items:center;padding:24px;box-sizing:border-box}
+    main{max-width:420px;text-align:center}img{border-radius:20px}h1{font-size:25px;line-height:1.3}
+    p{color:#bdc8c3;line-height:1.6}a{color:#ff955a}#open{display:block;background:#ff955a;color:#111715;
+    padding:15px;border-radius:14px;text-decoration:none;font-weight:700;margin:24px 0}nav{display:flex;gap:24px;justify-content:center}
+    [hidden]{display:none!important}
+  </style>
+</head>
+<body>
+  <main>
+    <img src="/brand/icon.png?v=r09" width="80" height="80" alt="Lexote">
+    <h1 id="title">Notu Lexote’de aç</h1>
+    <p id="description">Notunuzu görmek için uygulamayı açın. Gerekirse hesabınıza giriş yapın.</p>
+    <a id="open" hidden>Lexote’yi aç</a>
+    <p id="hint">Uygulama yüklü değilse mağazadan indirebilirsiniz.</p>
+    <nav aria-label="Uygulamayı indir">
+      <a href="https://apps.apple.com/app/id6779772543" rel="noreferrer">App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.lexote.app" rel="noreferrer">Google Play</a>
+    </nav>
+  </main>
+  <script>
+    (() => {
+      const en = !navigator.language.toLowerCase().startsWith('tr');
+      const params = new URLSearchParams(location.search);
+      const id = params.get('id');
+      const valid = Array.from(params.keys()).length === 1 && /^[A-Za-z0-9_-]{1,64}$/.test(id || '');
+      if (en) {
+        document.documentElement.lang = 'en';
+        document.title = document.getElementById('title').textContent = 'Open your note in Lexote';
+        document.getElementById('description').textContent = 'Open the app to view your note. Sign in to your account if needed.';
+        document.getElementById('open').textContent = 'Open Lexote';
+        document.getElementById('hint').textContent = 'If the app is not installed, download it from your app store.';
+        document.querySelector('nav').setAttribute('aria-label', 'Download the app');
+      }
+      if (!valid) {
+        document.getElementById('description').textContent = en ? 'This note link is invalid. Open Lexote and find your note.' : 'Bu not bağlantısı geçersiz. Lexote’yi açıp notunuzu bulun.';
+        return;
+      }
+      const open = document.getElementById('open');
+      open.href = 'lexote://cases/create?caseId=' + encodeURIComponent(id);
+      open.hidden = false;
+    })();
+  </script>
+</body>
+</html>

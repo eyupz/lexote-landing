@@ -1,0 +1,28 @@
+# Lexote
+
+> Lexote is a deadline and case-note tracking app for lawyers practising in Türkiye. The interface and website support Turkish and English. This is a product summary, not a legal opinion.
+
+## Calculator
+- Select the unit specified in the source document: day, week, calendar month or year. One calendar month is not a fixed 30 days.
+- With electronic service enabled, enter the UETS receipt date. The app determines deemed service after five calendar days, excluding receipt day, then applies the selected procedural period. Do not add five days again if the entered date is already the deemed service date.
+- Example: 29 January 2026 receipt → 3 February deemed service → one month gives 3 March; 30 days gives 5 March, before any applicable holiday adjustments.
+- HMK, İYUK and CMK have separate contextual explanations. Public holidays, judicial recess and exceptions require case-specific review. Informational alternatives do not silently change the saved date.
+- The selected clock time controls personal reminders; it is not a court filing cutoff.
+
+## Notes and privacy
+- Text and voice notes, colour-coded urgency, calendar view, completed notes and optional device-calendar export.
+- Guest use is available without providing an email address. Guest data is tied to that guest session; registering transfers notes to the account.
+- Reminders are scheduled on the device. Permissions, battery restrictions and operating-system settings may delay or prevent display.
+- Account data is stored using Google Cloud infrastructure; the database is in Frankfurt, Germany. Read the privacy notice for processing, transfers and retention.
+- Currently free, with no subscriptions, in-app purchases or advertisements. Available on the App Store; Android public availability must be confirmed on Google Play.
+
+## Official product pages
+- [English home](https://lexote.com.tr/en/)
+- [Guides](https://lexote.com.tr/en/guides/)
+- [Privacy notice](https://lexote.com.tr/en/privacy.html)
+- [Terms of use](https://lexote.com.tr/en/terms.html)
+- [App Store](https://apps.apple.com/app/lexote/id6779772543)
+- [Turkish summary](https://lexote.com.tr/llms.txt)
+
+## Contact
+info@lexote.com.tr

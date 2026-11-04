@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["NJSG7QT29L.com.lexote.app"],
+        "components": [{ "/": "/open-note.html", "comment": "Open an existing Lexote note; the application validates the note id and account access." }]
+      }
+    ]
+  }
+}
