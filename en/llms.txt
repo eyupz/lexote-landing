@@ -14,7 +14,7 @@
 - Guest use is available without providing an email address. Guest data is tied to that guest session; registering transfers notes to the account.
 - Reminders are scheduled on the device. Permissions, battery restrictions and operating-system settings may delay or prevent display.
 - Account data is stored using Google Cloud infrastructure; the database is in Frankfurt, Germany. Read the privacy notice for processing, transfers and retention.
-- Currently free, with no subscriptions, in-app purchases or advertisements. Available on the App Store; Android public availability must be confirmed on Google Play.
+- Currently free, with no subscriptions, in-app purchases or advertisements. Available on the App Store for iPhone and on Google Play for Android.
 
 ## Official product pages
 - [English home](https://lexote.com.tr/en/)
@@ -22,6 +22,7 @@
 - [Privacy notice](https://lexote.com.tr/en/privacy.html)
 - [Terms of use](https://lexote.com.tr/en/terms.html)
 - [App Store](https://apps.apple.com/app/lexote/id6779772543)
+- [Google Play](https://play.google.com/store/apps/details?id=com.lexote.app)
 - [Turkish summary](https://lexote.com.tr/llms.txt)
 
 ## Contact
